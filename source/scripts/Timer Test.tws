@@ -1,0 +1,489 @@
+(dp0
+S'buildDestination'
+p1
+VC:\u005cUsers\u005cNostralgik\u005cDesktop\u005cTest.html
+p2
+sS'saveDestination'
+p3
+VC:\u005cUsers\u005cNostralgik\u005cDesktop\u005cTimer Test.tws
+p4
+sS'target'
+p5
+S'sugarcane'
+p6
+sS'storyPanel'
+p7
+(dp8
+S'widgets'
+p9
+(lp10
+(dp11
+S'selected'
+p12
+I00
+sS'pos'
+p13
+(lp14
+I190
+aI48
+asS'passage'
+p15
+(itiddlywiki
+Tiddler
+p16
+(dp17
+S'text'
+p18
+V<<display "Timer Addon">>\u000aThis is a sample Page for the Timer Addon.\u000aNote that in the Jonah Template, a function doesn't work multiple times, sadly.\u000a\u000a<<display "Timer Control">>
+p19
+sS'tags'
+p20
+(lp21
+sS'created'
+p22
+ctime
+struct_time
+p23
+((I2012
+I11
+I2
+I1
+I3
+I10
+I4
+I307
+I0
+tp24
+(dp25
+tp26
+Rp27
+sS'modified'
+p28
+g27
+sS'title'
+p29
+VStart
+p30
+sbsa(dp31
+g12
+I00
+sg13
+(lp32
+I842
+aI22
+asg15
+(itiddlywiki
+Tiddler
+p33
+(dp34
+g18
+V<<silently>>\u000a<<set $TimerAddon = \u000afunction()\u000a{\u000a	var div_timer_container = document.createElement('div');\u000a	div_timer_container.setAttribute('id', 'timer');\u000a\u000a	var div_timer_canvas = document.createElement('canvas');\u000a	div_timer_canvas.setAttribute('id', 'timer_canvas');\u000a	div_timer_canvas.setAttribute('width', '150');\u000a	div_timer_canvas.setAttribute('height', '150');\u000a	div_timer_canvas.width = div_timer_canvas.width;\u000a	div_timer_container.appendChild(div_timer_canvas);\u000a	\u000a	var div_timer_text = document.createElement('span');\u000a	div_timer_text.setAttribute('id', 'timer_text');\u000a	div_timer_text.innerHTML = "Hurry Up!";\u000a	div_timer_container.appendChild(div_timer_text);\u000a\u000a	var Timer_Active = false;\u000a  var Timer_Paused = false;\u000a	var Timer_Mode = 'none';\u000a	var Timer_Param = "";\u000a	var Timer_Max = 0;\u000a	var Timer_Now = 0;\u000a  \u000a	var div_jonah_floater = document.getElementById('floater');\u000a	if(div_jonah_floater) 		div_jonah_floater.appendChild(div_timer_container);\u000a\u000a	var div_sugarcane_menu = document.getElementById('sidebar');\u000a	if(div_sugarcane_menu) div_sugarcane_menu.appendChild(div_timer_container);\u000a\u000a	function StartTimer(val)\u000a	{\u000a		Timer_Active = true;\u000a    Timer_Paused = false;\u000a		Timer_Max = val;\u000a		Timer_Now = val;\u000a		div_timer_text.style.display = 'block';\u000a		div_timer_canvas.style.display = 'block';\u000a	}\u000a\u000a	function StopTimer()\u000a	{\u000a		Timer_Active = false;\u000a		div_timer_text.style.display = 'none';\u000a		div_timer_canvas.style.display = 'none';\u000a	}\u000a\u000a	function PauseTimer()\u000a	{\u000a		Timer_Paused = true;\u000a	}\u000a\u000a	function ResumeTimer()\u000a	{\u000a		Timer_Paused = false;\u000a	}\u000a\u000a	function SetTimerText(text)\u000a	{\u000a		div_timer_text.innerHTML = text;\u000a	}\u000a\u000a	function SetTimerMode(mode)\u000a	{\u000a		if(mode == 'display')\u000a		{\u000a			Timer_Mode = 'display';\u000a		}\u000a		else if(mode == 'restart')\u000a		{\u000a			Timer_Mode = 'restart';\u000a		}\u000a		else Timer_Mode = 'none';\u000a	}\u000a\u000a	function SetTimerParam(param)\u000a	{\u000a		Timer_Param = param;\u000a	}\u000a\u000a	function OnTimerEnd()\u000a	{\u000a		StopTimer();\u000a		if(Timer_Mode == 'restart')\u000a		{\u000a			state.restart();\u000a			if(Timer_Param) alert(Timer_Param);\u000a			window.location.reload(true);\u000a			\u000a		} \u000a		else if(Timer_Mode == 'display')\u000a		{\u000a			state.display(Timer_Param[0]);\u000a		}\u000a	}\u000a\u000a	function OnTimerTick()\u000a	{\u000a		if(Timer_Active && !Timer_Paused)\u000a		{\u000a			Timer_Now = Timer_Now - 0.1;\u000a\u000a			if(Timer_Now <= 0) Timer_Now = 0;\u000a			\u000a			var context = div_timer_canvas.getContext("2d");\u000a			div_timer_canvas.width = div_timer_canvas.width;\u000a\u000a			var x = div_timer_canvas.width / 2;\u000a	      var y = div_timer_canvas.height / 2;\u000a	      var radius = 65;\u000a	      var startAngle = 1.5 * Math.PI;\u000a	      \u000a	      var endAngle = (1.5 + (2 / Timer_Max * Timer_Now)) * Math.PI;\u000a	      var counterClockwise = false;\u000a\u000a	      context.beginPath();\u000a	      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);\u000a	      context.lineWidth = 15;\u000a        if(div_jonah_floater) context.strokeStyle = "black";\u000a	      if(div_sugarcane_menu)  context.strokeStyle = "#BBBBBB";\u000a	      context.stroke();\u000a\u000a			context.font = 'bold 30px sans-serif';\u000a			if(div_jonah_floater) context.fillStyle = "black";\u000a			if(div_sugarcane_menu)  context.fillStyle = "#BBBBBB";\u000a			context.fillText(Timer_Now.toFixed(1), 55, 85);\u000a\u000a			if(Timer_Now <= 0) OnTimerEnd();\u000a		}\u000a	}\u000a\u000a	setInterval(function(){ OnTimerTick(); }, 100); \u000a\u000a	macros['start_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			StartTimer(val);\u000a		}\u000a	}\u000a\u000a	macros['stop_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			StopTimer();\u000a		}\u000a	}\u000a\u000a	macros['pause_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			PauseTimer();\u000a		}\u000a	}\u000a\u000a	macros['resume_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			ResumeTimer();\u000a		}\u000a	}\u000a\u000a	macros['set_timer_text'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerText(val);\u000a		}\u000a	}\u000a\u000a	macros['set_timer_mode'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerMode(val);\u000a		}\u000a	}\u000a\u000a	macros['set_timer_param'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerParam(val);\u000a		}\u000a	}\u000a\u000a}\u000a>>\u000a<<print $TimerAddon()>>\u000a<<endsilently>>
+p35
+sg20
+(lp36
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I3
+I23
+I4
+I307
+I0
+tp37
+(dp38
+tp39
+Rp40
+sg28
+g40
+sg29
+VTimer Addon
+p41
+sbsa(dp42
+g12
+I00
+sg13
+(lp43
+I656
+aI119
+asg15
+(itiddlywiki
+Tiddler
+p44
+(dp45
+S'text'
+p46
+VTimer Addon Test
+p47
+sS'tags'
+p48
+(lp49
+sS'created'
+p50
+g23
+((I2012
+I10
+I11
+I22
+I56
+I45
+I3
+I285
+I1
+tp51
+(dp52
+tp53
+Rp54
+sS'modified'
+p55
+g54
+sS'title'
+p56
+VStoryTitle
+p57
+sbsa(dp58
+g12
+I00
+sg13
+(lp59
+I283
+aI211
+asg15
+(itiddlywiki
+Tiddler
+p60
+(dp61
+g18
+VYou can control the Addon with this Commands:\u000a\u000a[[Start Timer]]\u000a[[Pause Timer]]\u000a[[Resume Timer]]\u000a[[Stop Timer]]\u000a\u000a[[Set Mode To Restart]]\u000a[[Set Mode To Display]]
+p62
+sg20
+(lp63
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I6
+I23
+I4
+I307
+I0
+tp64
+(dp65
+tp66
+Rp67
+sg28
+g67
+sg29
+VTimer Control
+p68
+sbsa(dp69
+g12
+I00
+sg13
+(lp70
+I498
+aI257
+asg15
+(itiddlywiki
+Tiddler
+p71
+(dp72
+g18
+VThe Timer has been started with 10 Seconds\u000a\u000a<<display "Timer Control">>\u000a<<start_timer 10>>\u000a
+p73
+sg20
+(lp74
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I6
+I44
+I4
+I307
+I0
+tp75
+(dp76
+tp77
+Rp78
+sg28
+g78
+sg29
+VStart Timer
+p79
+sbsa(dp80
+g12
+I00
+sg13
+(lp81
+I287
+aI417
+asg15
+(itiddlywiki
+Tiddler
+p82
+(dp83
+g18
+VThe Timer has been paused\u000a\u000a<<display "Timer Control">>\u000a<<pause_timer>>
+p84
+sg20
+(lp85
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I7
+I55
+I4
+I307
+I0
+tp86
+(dp87
+tp88
+Rp89
+sg28
+g89
+sg29
+VPause Timer
+p90
+sbsa(dp91
+g12
+I00
+sg13
+(lp92
+I121
+aI393
+asg15
+(itiddlywiki
+Tiddler
+p93
+(dp94
+g18
+VThe Timer has been stopped\u000a\u000a<<display "Timer Control">>\u000a<<stop_timer>>
+p95
+sg20
+(lp96
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I8
+I47
+I4
+I307
+I0
+tp97
+(dp98
+tp99
+Rp100
+sg28
+g100
+sg29
+VStop Timer
+p101
+sbsa(dp102
+g12
+I00
+sg13
+(lp103
+I980
+aI22
+asg15
+(itiddlywiki
+Tiddler
+p104
+(dp105
+g18
+V#timer_text\u000a{\u000a	display: none;\u000a	color: #000000; /* Jonah */\u000a	color: #BBBBBB; /* Sugarcane */\u000a	font-weight: bold;\u000a	font-size: 28px;\u000a	margin: 10px 0 20px 0;\u000a}\u000a\u000a#timer_canvas\u000a{\u000a	display: none;\u000a	width: 150px;\u000a	height: 150px;\u000a}
+p106
+sg20
+(lp107
+Vstylesheet
+p108
+asg22
+g23
+((I2012
+I11
+I2
+I1
+I11
+I53
+I4
+I307
+I0
+tp109
+(dp110
+tp111
+Rp112
+sg28
+g112
+sg29
+VTimer Stylesheet
+p113
+sbsa(dp114
+g12
+I00
+sg13
+(lp115
+I464
+aI404
+asg15
+(itiddlywiki
+Tiddler
+p116
+(dp117
+g18
+VThe Timer has been resumed.\u000a\u000a<<display "Timer Control">>\u000a<<resume_timer>>
+p118
+sg20
+(lp119
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I26
+I26
+I4
+I307
+I0
+tp120
+(dp121
+tp122
+Rp123
+sg28
+g123
+sg29
+VResume Timer
+p124
+sbsa(dp125
+g12
+I00
+sg13
+(lp126
+I48
+aI255
+asg15
+(itiddlywiki
+Tiddler
+p127
+(dp128
+g18
+VThe Timer Mode has been set to "restart"\u000aWhen the timer runs out, the whole game is restarted, and a custom text will be shown.\u000a\u000a<<display "Timer Control">>\u000a<<set_timer_mode "restart">>\u000a<<set_timer_param "You have lost">>
+p129
+sg20
+(lp130
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I26
+I54
+I4
+I307
+I0
+tp131
+(dp132
+tp133
+Rp134
+sg28
+g134
+sg29
+VSet Mode To Restart
+p135
+sbsa(dp136
+g12
+I00
+sg13
+(lp137
+I26
+aI116
+asg15
+(itiddlywiki
+Tiddler
+p138
+(dp139
+S'text'
+p140
+VThe Timer Mode has been set to "display"\u000aWhen the timer runs out, a custom Scene is displayed\u000a\u000a<<display "Timer Control">>\u000a<<set_timer_mode "display">>\u000a<<set_timer_param "Timer Ended">>
+p141
+sS'tags'
+p142
+(lp143
+sS'created'
+p144
+g23
+((I2012
+I11
+I2
+I1
+I26
+I54
+I4
+I307
+I0
+tp145
+(dp146
+tp147
+Rp148
+sS'modified'
+p149
+g148
+sS'title'
+p150
+VSet Mode To Display
+p151
+sbsa(dp152
+g12
+I00
+sg13
+(lp153
+I697
+aI296
+asg15
+(itiddlywiki
+Tiddler
+p154
+(dp155
+g18
+VThis is a custom scene displayed when the Timer has finished.
+p156
+sg20
+(lp157
+sg22
+g23
+((I2012
+I11
+I2
+I1
+I29
+I20
+I4
+I307
+I0
+tp158
+(dp159
+tp160
+Rp161
+sg28
+g161
+sg29
+VTimer Ended
+p162
+sbsasS'scale'
+p163
+I1
+ss.

@@ -1,0 +1,17 @@
+<<if $flyModeCount lte 3>>
+<<set_timer_param $HUMAN_TRANSITION>>
+<<set $flyDuration = Math.random() * 30 + 2>>
+<<start_timer $flyDuration>>
+<<else>>
+<<if $flyModeCount lte 5>>
+<<set_timer_param $HUMAN_TRANSITION>>
+<<set $flyDuration = Math.random() * 20 + 5>>
+<<start_timer $flyDuration>>
+<<else>>
+<<if $flyModeCount eq 6>>
+<<set_timer_param $FLY_DYING>>
+<<set $flyDuration = Math.random() * 60 + 20>>
+<<start_timer $flyDuration>>
+<<endif>>
+<<endif>>
+<<endif>>

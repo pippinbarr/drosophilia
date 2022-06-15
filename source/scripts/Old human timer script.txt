@@ -1,0 +1,6 @@
+<<display "Timer Addon">>
+<<set_timer_mode "display">>
+<<set_timer_param $FLY_TRANSITION>>
+<<set $toFlyModeTimerRunning = 1>>
+<<set $timerDuration = Math.random() * 60 + 5>>
+<<start_timer $timerDuration>>

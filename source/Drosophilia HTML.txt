@@ -1,0 +1,28 @@
+		<div id="gamewrapper">
+			<div id="gamename">
+				<a name="drosophilia"></a>
+				Drosophilia
+			</div>
+			<div id="gamedate">
+				With <a href="http://www.twitter.com/gordoncalleja">Gordon Calleja</a> and <a href="http://www.twitter.com/sslhrmnsn">Sidsel Hermansen</a><br />
+				February 2014
+			
+			</div>
+			
+			<div id="screenshot">
+				<a href="http://www.pippinbarr.com/games/drosophilia/"><img src="http://www.pippinbarr.com/games/drosophilia/drosophilia.png"></a>
+			</div>
+			
+			<div id="description">
+				Work your depressing day job! Decorate your desk! Experience true apathy! But watch out for the twist! Maybe you'll be all like, "Help me! Help me!"
+				<p>
+					Drosophilia was made in 48 hours at the <a href="http://globalgamejam.org/">Global Game Jam</a> 2014 (plus a few more hours of polishing) with <a href="http://www.twitter.com/gordoncalleja">Gordon Calleja</a> and <a href="http://www.twitter.com/sslhrmnsn">Sidsel Hermansen</a>. It was written in <a href="http://twinery.org/">Twine</a>. Sound effects were recorded by Sidsel with a Zoom H4 and music and effects were made in Logic. Background videos were recorded with cellphones and processed in After Effects and iMovie. Some background videos are of actual oil paintings by Gordon.
+				</p>
+				<p>
+					You can read <a href="http://www.pippinbarr.com/blog/?tag=drosophilia">my writing about Drosophilia</a> on my blog.
+				</p>
+				<p>
+					<a href="http://www.pippinbarr.com/games/drosophilia/">Play Drosophilia in your browser</a>
+				</p>
+			</div>
+		</div>

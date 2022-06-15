@@ -1,0 +1,42 @@
+== HumanCall code ==
+
+<<silently>>
+
+<<set $lastHumanLocation = "HumanOffice">>
+<<set $stepsSinceWorked = 0>>
+<<set $callsremaining = $callsremaining - 1>>
+<<set $workDoneThisTime = $workDoneThisTime + 1>>
+
+<<if $toFlyModeTimerRunning eq 0>>
+	<<if $flyModeCount eq 0>>
+		<<if $workDoneThisTime gte $FIRST_WORK_REQUIREMENT>>
+			<<display "Timer Addon">>
+			<<set_timer_mode "display">>
+			<<set_timer_param $FLY_TRANSITION>>
+			<<set $toFlyModeTimerRunning = 1>>
+			<<set $timerDuration = Math.random() * 10 + 5>>
+			<<start_timer $timerDuration>>
+		<<endif>>
+	<<endif>>
+	<<if $flyModeCount eq 1>>
+		<<if $workDoneThisTime gte $SECOND_WORK_REQUIREMENT>>
+			<<display "Timer Addon">>
+			<<set_timer_mode "display">>
+			<<set_timer_param $FLY_TRANSITION>>
+			<<set $toFlyModeTimerRunning = 1>>
+			<<set $timerDuration = Math.random() * 10 + 5>>
+			<<start_timer $timerDuration>>
+		<<endif>>
+	<<endif>>
+	<<if $flyModeCount gte 2>>
+		<<if $workDoneThisTime gte $THIRD_WORK_REQUIREMENT>>
+			<<display "Timer Addon">>
+			<<set_timer_mode "display">>
+			<<set_timer_param $FLY_TRANSITION>>
+			<<set $toFlyModeTimerRunning = 1>>
+			<<set $timerDuration = Math.random() * 10 + 5>>
+			<<start_timer $timerDuration>>
+		<<endif>>
+	<<endif>>
+<<endif>>
+<<endsilently>>

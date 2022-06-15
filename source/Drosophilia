@@ -1,0 +1,1315 @@
+(dp0
+S'buildDestination'
+p1
+V/Users/pippin/temp
+p2
+sS'saveDestination'
+p3
+V/Users/pippin/Desktop/Drosophilia/Drosophilia
+p4
+sS'target'
+p5
+S'sugarcane'
+p6
+sS'storyPanel'
+p7
+(dp8
+S'widgets'
+p9
+(lp10
+(dp11
+S'selected'
+p12
+I01
+sS'pos'
+p13
+(lp14
+F554.0
+aF23.0
+asS'passage'
+p15
+(itiddlywiki
+Tiddler
+p16
+(dp17
+S'text'
+p18
+V\u000a\u000a\u000a\u000a\u000a\u000a\u000a@@font-size:500%;margin-top:200px;DROSOPHILIA@@\u000a\u000aA Twine game for the Global Game Jam 2014\u000aby [[Pippin Barr|http://www.pippinbarr.com/]], [[Gordon Calleja|http://twitter.com/gordoncalleja]], and [[Sidsel Hermansen|http://twitter.com/SsLHrmnsN]]\u000a\u000aBest, as with all things, with headphones.\u000aDrosophilia uses YouTube videos and music files, sorry if that gets messed up through bandwidth issues.\u000a\u000a[[Start.|HumanWindow]]\u000a\u000a<<playsound "TitleFinal.mp3">>\u000a\u000a<<set $callsremaining = 100>>\u000a<<set $emailsRemaining = 24>>\u000a<<set $workDoneThisTime = 0>>\u000a\u000a<<set $stepsSincePhoneAnswered = 0>>\u000a\u000a<<set $flyModeCount = 0>>\u000a\u000a<<set $toFlyModeTimerRunning = 0>>\u000a<<set $toHumanModeTimerRunning = 0>>\u000a\u000a<<set $lastHumanLocation = "HumanOffice">>\u000a<<set $lastFlyLocation = "FlyOffice">>\u000a\u000a<<set $WINDOW_DURATION = 2>>\u000a<<set $FIRST_FLYMODE_DURATION = 3>>\u000a<<set $SECOND_FLYMODE_DURATION = 3>>\u000a<<set $THIRD_FLYMODE_DURATION = 3>>\u000a<<set $FIRST_WORK_REQUIREMENT = 1>>\u000a<<set $SECOND_WORK_REQUIREMENT = 1>>\u000a<<set $THIRD_WORK_REQUIREMENT = 1>>\u000a
+p19
+sS'tags'
+p20
+(lp21
+sS'created'
+p22
+ctime
+struct_time
+p23
+((I2014
+I1
+I25
+I10
+I28
+I41
+I5
+I25
+I0
+tp24
+(dp25
+tp26
+Rp27
+sS'modified'
+p28
+g27
+sS'title'
+p29
+VStart
+p30
+sbsa(dp31
+g12
+I00
+sg13
+(lp32
+I437
+aI310
+asg15
+(itiddlywiki
+Tiddler
+p33
+(dp34
+g18
+VThe glowing <<print either("led","red")>> panel above your desk <<print either("reminds","informs","instructs","blares at")>> you that you <<print either("still","")>> have <<if $callsremaining eq 0>>0<<else>><<print $callsremaining>><<endif>> <<if $callsremaining eq 1>>call<<else>>calls<<endif>> remaining in today's quota. <<print either("A small","An embarrassing","A vaguely revolting","A cringe-inducing")>> company-provided sticker depicts a teddy bear and the words "no time like the present!" Your one authorized piece of desk decor, <<cyclinglink $deskDecor "a Buzz Lightyear figurine" "a photo of your fiancee" "a photo of your fiance" "a photo of your boyfriend" "a photo of your girlfriend" "a photo of your husband" "a photo of your wife" "a Totoro figure" "an autographed baseball" "a Santa hat from last year's Christmas party" "a Johnny Cash plushy","a copy of The Female Eunuch">>, is positioned next to your computer monitor.\u000a<<display "OfficeFlavour">>\u000a<<print either("The","Your")>> phone is <<print either("constantly","eternally","always","")>> ringing. <<print either("They pay you to","It's your job to","Technically you should","Probably better")>> <<if $stepsSincePhoneAnswered gt 2>>@@font-size:150%;[[answer it|HumanCall]]@@<<else>>[[answer it|HumanCall]]<<endif>>. Although you could also <<print either("go to","sneak off to","take a quick break at","see what's happening in","drop in at")>> the [[cafeteria|HumanCafeteria]].\u000a\u000a\u000a\u000a\u000a<<stopvideo>>\u000a<<playvideo fOIgNmiGRyA 0 loop>>\u000a\u000a<<fadeoutsound "TitleFinal.mp3" >>\u000a<<fadeoutsound "HumanCafeteria.mp3" >>\u000a<<fadeinsound "HumanOffice.mp3" >>\u000a\u000a<<set $lastHumanLocation = "HumanOffice">>\u000a<<set $stepsSincePhoneAnswered = $stepsSincePhoneAnswered + 1>>
+p35
+sg20
+(lp36
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I29
+I30
+I5
+I25
+I0
+tp37
+(dp38
+tp39
+Rp40
+sg28
+g40
+sg29
+VHumanOffice
+p41
+sbsa(dp42
+g12
+I00
+sg13
+(lp43
+I714
+aI309
+asg15
+(itiddlywiki
+Tiddler
+p44
+(dp45
+g18
+VYou sit alone at a free table and <<cyclinglink $humanCafeActivity "eat a garden salad" "eat an egg and mayonnaise sandwich" "eat an asparagus sandwich" "eat a generic vegetarian sandwich" "drink some coffee", "kill some time", "watch everyone else eating", "try to clear your head">>. <<print either("Never satisfied","Inevitably","Irritatingly","Always ready to spoil a quiet moment","Ever present")>>, your phone <<cyclinglink $cellphoneSound "beeps" "trills" "chimes" "makes a sci-fi sound" "plays a power metal chord" "shrieks")>> to remind you that you have <<print $emailsRemaining>> emails left to [[answer|HumanEmail]].\u000a<<if Math.random() < 0.5>>\u000a<<display "CafeteriaFlavour">>\u000a<<endif>>\u000aAcross the floor are the full-height windows that make it the <<print either("best space","one bearable place","only genuinely enjoyable","sole naturally-lit room you have access to")>> in the office building. <<print either("You often like to","It's nice to","You're always drawn to wander over to")>> [[look out those windows|HumanWindow]] <<print either("and just lose yourself","and just space out","and try to relax","and think about anything other than work")>>. <<print either("Ever present, of course, is the fact that","Of course, you can't shake the feeling","Technically, though,","You sadly realize that")>> you should [[go back to the office|HumanOffice]] and <<print either("get some work done","answer some more calls","keep chasing your quota for the day")>>.\u000a\u000a<<stopvideo>>\u000a<<playvideo XpRMoouLlIM 151 loop>>\u000a<<stopvideo>>\u000a\u000a<<fadeoutsound "HumanOffice.mp3" >>\u000a<<fadeinsound "HumanCafeteria.mp3" >>\u000a\u000a<<set $lastHumanLocation = "HumanCafeteria">>\u000a<<set $stepsSincePhoneAnswered = $stepsSincePhoneAnswered + 1>>\u000a\u000a<<if Math.random() < 0.25>>\u000a<<set $emailsRemaining = $emailsRemaining + Math.floor(Math.random() * 3)>>\u000a<<endif>>
+p46
+sg20
+(lp47
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I30
+I38
+I5
+I25
+I0
+tp48
+(dp49
+tp50
+Rp51
+sg28
+g51
+sg29
+VHumanCafeteria
+p52
+sbsa(dp53
+g12
+I00
+sg13
+(lp54
+I848
+aI311
+asg15
+(itiddlywiki
+Tiddler
+p55
+(dp56
+g18
+V<<stopvideo>>\u000a<<playvideo XNiANZcR2zc 0 loop>>\u000a\u000a<<timedgoto "HumanCafeteria" $WINDOW_DURATION>>\u000a\u000a<<set $lastHumanLocation = "HumanCafeteria">>\u000a<<set $stepsSincePhoneAnswered = $stepsSincePhoneAnswered + 1>>
+p57
+sg20
+(lp58
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I31
+I54
+I5
+I25
+I0
+tp59
+(dp60
+tp61
+Rp62
+sg28
+g62
+sg29
+VHumanWindow
+p63
+sbsa(dp64
+g12
+I00
+sg13
+(lp65
+I262
+aI311
+asg15
+(itiddlywiki
+Tiddler
+p66
+(dp67
+g18
+V<<silently>>\u000a\u000a<<set $lastHumanLocation = "HumanOffice">>\u000a<<set $stepsSincePhoneAnswered = 0>>\u000a<<set $callsremaining = $callsremaining - 1>>\u000a<<set $workDoneThisTime = $workDoneThisTime + 1>>\u000a\u000a<<stopvideo>>\u000a<<playvideo uXxQcQ_-xT4 0 loop>>\u000a\u000a<<if $toFlyModeTimerRunning eq 0>>\u000a	<<if $flyModeCount eq 0>>\u000a		<<if $workDoneThisTime gte $FIRST_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a	<<if $flyModeCount eq 1>>\u000a		<<if $workDoneThisTime gte $SECOND_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a	<<if $flyModeCount gte 2>>\u000a		<<if $workDoneThisTime gte $THIRD_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a<<endif>>\u000a<<endsilently>>\u000a<<if Math.random() < 0.5>>\u000a<<set $question =  \u000aeither(\u000a"asks you to list all the salient differences between product A and product B",\u000a"makes a formal request to see the records your company holds on them",\u000a"asks whether you know anything about how to connect two routers together to extend their wifi coverage, something which has nothing to do with your office",\u000a"talks about a product that your company does make, but which you have no connection with",\u000a"begins to tell you about a theory they have concerning microwave radiation",\u000a"asks you to send them an information sheet about a product you have never heard of",\u000a"asks whether there are any jobs going in your office",\u000a"asks you out on a date",\u000a"attempts to start a conversation with you about immigration reform",\u000a"starts into their sales pitch for a product made by a competing company"\u000a) >>\u000aYou pick up the phone and <<print either("brace yourself","take a deep breathe","pray for inner strength","grind your teeth","close your eyes")>> before answering with the standard greeting. <<print either("The voice on the end of the line","The caller","Your caller","The customer")>> <<print either("plaintively","aggressively","boredly","slowly","urgently")>> <<print $question>>.\u000a\u000aYou reply, "<<cyclinglink $pointlessCallAnswer "I don't know" "that's not my area" "please hold" "I'm transferring you to a colleague" "why are you calling me?" "what do you want from me?" "don't you have anything better to do?" "I think you've got the wrong number" "please don't call this number again">>", and [[end the call|HumanOffice]].\u000a<<else>>\u000a<<set $question =  \u000aeither(\u000a"asks for help with the computer system your office deals with",\u000a"requests information on your latest products",\u000a"talks about how their computer isn't working anymore",\u000a"asks you some very specific questions about the system your office supports",\u000a"asks for a replacement manual to be sent to them",\u000a"gives you a remarkably detailed account of their daily use of the system your office supports, then asks a complicated question you don't know the answer to",\u000a"inquires about your office's policy on returning software after the warantee has expired",\u000a"tells you an involved story about a problem they're having with your company's software",\u000a"asks you why they shouldn't move their business to a competitor's system",\u000a"asks about upgrade options for an antiquated version of your company's software"\u000a) >>\u000aYou pick up the phone and <<print either("brace yourself","take a deep breathe","pray for inner strength","grind your teeth","close your eyes")>> before answering with the standard greeting. <<print either("The voice on the end of the line","The caller","Your caller","The customer")>> <<print either("plaintively","aggressively","boredly","slowly","urgently")>> <<print $question>>.\u000a\u000aYou <<cyclinglink $normalCallAnswer "tell them you'll get back to them" "ask for their information and say you'll have an appropriate colleague get in touch" "ask whether they've tried the general purpose call-centre" "mute them for a while as they talk" "give them the standard response as dictated by the call center's computer system" "try to talk to them for as long as you can bear it" "do your best to assist them">> and then [[end the call|HumanOffice]].\u000a<<endif>>
+p68
+sg20
+(lp69
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I32
+I48
+I5
+I25
+I0
+tp70
+(dp71
+tp72
+Rp73
+sg28
+g73
+sg29
+VHumanCall
+p74
+sbsa(dp75
+g12
+I00
+sg13
+(lp76
+I10
+aI10
+asg15
+(itiddlywiki
+Tiddler
+p77
+(dp78
+g18
+VDrosophilia
+p79
+sg20
+(lp80
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I35
+I12
+I5
+I25
+I0
+tp81
+(dp82
+tp83
+Rp84
+sg28
+g84
+sg29
+VStoryTitle
+p85
+sbsa(dp86
+g12
+I00
+sg13
+(lp87
+I1123
+aI12
+asg15
+(itiddlywiki
+Tiddler
+p88
+(dp89
+g18
+Vversion.extensions.cyclinglinkMacro={major:3,minor:3,revision:0};\u000amacros.cyclinglink={handler:function(a,b,c){var rl="cyclingLink";\u000afunction toggleText(w){w.classList.remove("cyclingLinkInit");\u000aw.classList.toggle(rl+"Enabled");w.classList.toggle(rl+"Disabled");\u000aw.style.display=((w.style.display=="none")?"inline":"none")}switch(c[c.length-1]){case"end":var end=true;\u000ac.pop();break;case"out":var out=true;c.pop();break}var v="";if(c.length&&c[0][0]=="$"){v=c[0].slice(1);\u000ac.shift()}var h=state.history[0].variables;if(out&&h[v]===""){return\u000a}var l=Wikifier.createInternalLink(a,null);l.className="internalLink cyclingLink";\u000al.setAttribute("data-cycle",0);for(var i=0;i<c.length;i++){var on=(i==Math.max(c.indexOf(h[v]),0));\u000avar d=insertElement(null,"span",null,"cyclingLinkInit cyclingLink"+((on)?"En":"Dis")+"abled");\u000aif(on){h[v]=c[i];l.setAttribute("data-cycle",i)}else{d.style.display="none"\u000a}insertText(d,c[i]);if(on&&end&&i==c.length-1){l.parentNode.replaceChild(d,l)\u000a}else{l.appendChild(d)}}l.onclick=function(){var t=this.childNodes;\u000avar u=this.getAttribute("data-cycle")-0;var m=t.length;toggleText(t[u]);\u000au=(u+1);if(!(out&&u==m)){u%=m;if(v){h[v]=c[u]}}else{h[v]=""}if((end||out)&&u==m-(end?1:0)){if(end){var n=this.removeChild(t[u]);\u000an.className=rl+"End";n.style.display="inline";this.parentNode.replaceChild(n,this)\u000a}else{this.parentNode.removeChild(this);return}return}toggleText(t[u]);\u000athis.setAttribute("data-cycle",u)}}};
+p90
+sg20
+(lp91
+Vscript
+p92
+asg22
+g23
+((I2014
+I1
+I25
+I10
+I41
+I17
+I5
+I25
+I0
+tp93
+(dp94
+tp95
+Rp96
+sg28
+g96
+sg29
+VCycling Links Script
+p97
+sbsa(dp98
+g12
+I00
+sg13
+(lp99
+I8
+aI133
+asg15
+(itiddlywiki
+Tiddler
+p100
+(dp101
+g18
+VPippin Barr\u000aGordon Calleja\u000aSidsel Hermanssen
+p102
+sg20
+(lp103
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I45
+I55
+I5
+I25
+I0
+tp104
+(dp105
+tp106
+Rp107
+sg28
+g107
+sg29
+VStoryAuthor
+p108
+sbsa(dp109
+g12
+I00
+sg13
+(lp110
+I7
+aI259
+asg15
+(itiddlywiki
+Tiddler
+p111
+(dp112
+g18
+V--Let the player undo moves? (on / off)\u000a--In Sugarcane, this enables the browser's back button.\u000a--In Jonah, this lets the player click links in previous\u000a--passages.\u000a\u000aUndo: off\u000a\u000a--Let the player use bookmarks? (on / off)\u000a--This enables the Bookmark links in Jonah and Sugarcane\u000a--(If the player can't undo, bookmarks are always disabled.)\u000a\u000aBookmark: off\u000a\u000a--Obfuscate the story's HTML source to prevent possible\u000a--spoilers? (swap / off)\u000a\u000aObfuscate: off\u000a\u000a--String of letter pairs to use for swap-style obfuscation\u000a\u000aObfuscateKey: giwspvakmzehnyqxurdocbltfj\u000a\u000a--Include the jQuery script library? (on / off)\u000a--Individual scripts may force this on by\u000a--containing the text 'requires jQuery'.\u000a\u000ajQuery: on\u000a\u000a--Include the Modernizr script library? (on / off)\u000a--Individual scripts/stylesheets may force this on by\u000a--containing the text 'requires Modernizr'.\u000a\u000aModernizr: on\u000a
+p113
+sg20
+(lp114
+sg22
+g23
+((I2014
+I1
+I25
+I10
+I46
+I48
+I5
+I25
+I0
+tp115
+(dp116
+tp117
+Rp118
+sg28
+g118
+sg29
+VStorySettings
+p119
+sbsa(dp120
+g12
+I00
+sg13
+(lp121
+I992
+aI13
+asg15
+(itiddlywiki
+Tiddler
+p122
+(dp123
+g18
+V#passages { width: 600px; }\u000a#passages { border-left: 0; }\u000a#passages { padding left: 0; }\u000a\u000a#passages { color: #FFFFFF; !important }\u000a#passages { font-weight: normal; }\u000a#passages { font-family: "courier new"; !important }\u000a#passages { font-size: 150%; !important }\u000a\u000a#sidebar { display: none; }\u000a
+p124
+sg20
+(lp125
+Vstylesheet
+p126
+asg22
+g23
+((I2014
+I1
+I25
+I10
+I47
+I19
+I5
+I25
+I0
+tp127
+(dp128
+tp129
+Rp130
+sg28
+g130
+sg29
+VCSS
+p131
+sbsa(dp132
+g12
+I00
+sg13
+(lp133
+I1123
+aI143
+asg15
+(itiddlywiki
+Tiddler
+p134
+(dp135
+g18
+V/*\u000a \u000aTwineTubular\u000aA twine macro for making YouTube powered background images\u000aHacked mercilessly into twine by Jonathan Prior\u000ahttp://jonathanprior.com\u000a \u000aHOW TO USE\u000a \u000a<<playvideo RWgg5-kUSho 0>>\u000a \u000aargument 1 is the ID of the YT video\u000aargument 2 is the time you want to start the video at in seconds\u000aargument 3 should be "loop" if you want the video to loop\u000aargument 4 should be "sound" if you want sound from the video\u000a \u000aso for a video that skips ahead to 20 seconds and loops:\u000a \u000a<<playvideo RWgg5-kUSho 20 loop>>\u000a \u000afor the same video as above, but with sound:\u000a \u000a<<playvideo RWgg5-kUSho 20 loop sound>>\u000a \u000afor the same video as above, with sound but not looping:\u000a \u000a<<playvideo RWgg5-kUSho 20 noloop sound>>\u000a \u000aThe video plays automatically throughout the passage you include it in.\u000a \u000aTo stop the video, in the next passage, use the <<stopvideo>> macro\u000a \u000a*/\u000a \u000awindow._tubular = undefined;\u000awindow.jquery_url = 'https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/';\u000a \u000avar s = document.createElement('script');\u000as.src = jquery_url + 'jquery.min.js';\u000as.onload = function f(){\u000a  if (jQuery) {\u000a    jQuery.noConflict();\u000a  }\u000a}\u000adocument.getElementsByTagName("head")[0].appendChild(s);\u000a \u000aif (!document.getElementById("ytjs")) {\u000a    var tag = document.createElement('script');\u000a    tag.src = "https://www.youtube.com/iframe_api";\u000a    tag.id = "ytjs";\u000a    var firstScriptTag = document.getElementsByTagName('script')[0];\u000a    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);\u000a} else {\u000a    try {\u000a        window.onYouTubeIframeAPIReady();\u000a    } catch(e) {\u000a        void(0);\u000a    }\u000a}\u000a \u000amacros["playvideo"]={\u000a    handler: function(place, macroName, params, parser) {\u000a        /* jQuery tubular plugin\u000a        |* by Sean McCambridge\u000a        |* http://www.seanmccambridge.com/tubular\u000a        |* version: 1.0\u000a        |* updated: October 1, 2012\u000a        |* since 2010\u000a        |* licensed under the MIT License\u000a        |* Enjoy.\u000a        |*\u000a        |* Thanks,\u000a        |* Sean */\u000a \u000a        ;(function ($, window) {\u000a \u000a            // test for feature support and return if failure\u000a \u000a            // defaults\u000a            var defaults = {\u000a                ratio: 16/9, // usually either 4/3 or 16/9 -- tweak as needed\u000a                videoId: 'ZCAnLxRvNNc', // toy robot in space is a good default, no?\u000a                mute: true,\u000a                repeat: true,\u000a                width: $(window).width(),\u000a                wrapperZIndex: 99,\u000a                playButtonClass: 'tubular-play',\u000a                pauseButtonClass: 'tubular-pause',\u000a                muteButtonClass: 'tubular-mute',\u000a                volumeUpClass: 'tubular-volume-up',\u000a                volumeDownClass: 'tubular-volume-down',\u000a                increaseVolumeBy: 10,\u000a                start: 0\u000a            };\u000a            \u000a            // methods\u000a \u000a            var tubular = function(node, options) { // should be called on the wrapper div\u000a                var options = $.extend({}, defaults, options),\u000a                    $body = $('body') // cache body node\u000a                    $node = $(node); // cache wrapper node\u000a \u000a                // build container\u000a                var tubularContainer = '<div id="tubular-container" style="overflow: hidden; position: fixed; z-index: -99; width: 100%; height: 100%; top: 0; left: 0"><div id="tubular-player" style="position: fixed"></div></div><div id="tubular-shield" style="width: 100%; height: 100%; z-index: -97; position: fixed; left: 0; top: 0;"></div>';\u000a \u000a                // set up css prereq's, inject tubular container and set up wrapper defaults\u000a                //$('html,body').css({'width': '100%', 'height': '100%'});\u000a                $body.prepend(tubularContainer);\u000a                $node.css({position: 'relative', 'z-index': options.wrapperZIndex});\u000a \u000a                // set up iframe player, use global scope so YT api can talk\u000a                window.player;\u000a                window.onYouTubeIframeAPIReady = function() {\u000a                    player = new YT.Player('tubular-player', {\u000a                        width: options.width,\u000a                        height: Math.ceil(options.width / options.ratio),\u000a                        videoId: options.videoId,\u000a                        playerVars: {\u000a                            controls: 0,\u000a                            showinfo: 0,\u000a                            modestbranding: 1,\u000a                            rel: 0,\u000a                            wmode: 'transparent'\u000a                        },\u000a                        events: {\u000a                            'onReady': onPlayerReady,\u000a                            'onStateChange': onPlayerStateChange\u000a                        }\u000a                    });\u000a                }\u000a \u000a                window.onPlayerReady = function(e) {\u000a                    resize();\u000a                    if (options.mute) e.target.mute();\u000a                    e.target.seekTo(options.start);\u000a                    e.target.playVideo();\u000a                }\u000a \u000a                window.onPlayerStateChange = function(state) {\u000a                    if (state.data === 0 && options.repeat) { // video ended and repeat option is set true\u000a                        player.seekTo(options.start); // restart\u000a                    }\u000a                }\u000a \u000a                // resize handler updates width, height and offset of player after resize/init\u000a                var resize = function() {\u000a                    var width = $(window).width(),\u000a                        pWidth, // player width, to be defined\u000a                        height = $(window).height(),\u000a                        pHeight, // player height, tbd\u000a                        $tubularPlayer = $('#tubular-player');\u000a \u000a                    // when screen aspect ratio differs from video, video must center and underlay one dimension\u000a \u000a                    if (width / options.ratio < height) { // if new video height < window height (gap underneath)\u000a                        pWidth = Math.ceil(height * options.ratio); // get new player width\u000a                        $tubularPlayer.width(pWidth).height(height).css({left: (width - pWidth) / 2, top: 0}); // player width is greater, offset left; reset top\u000a                    } else { // new video width < window width (gap to right)\u000a                        pHeight = Math.ceil(width / options.ratio); // get new player height\u000a                        $tubularPlayer.width(width).height(pHeight).css({left: 0, top: (height - pHeight) / 2}); // player height is greater, offset top; reset left\u000a                    }\u000a \u000a                }\u000a \u000a                // events\u000a                $(window).on('resize.tubular', function() {\u000a                    resize();\u000a                })\u000a \u000a                $('body').on('click','.' + options.playButtonClass, function(e) { // play button\u000a                    e.preventDefault();\u000a                    player.playVideo();\u000a                }).on('click', '.' + options.pauseButtonClass, function(e) { // pause button\u000a                    e.preventDefault();\u000a                    player.pauseVideo();\u000a                }).on('click', '.' + options.muteButtonClass, function(e) { // mute button\u000a                    e.preventDefault();\u000a                    (player.isMuted()) ? player.unMute() : player.mute();\u000a                }).on('click', '.' + options.volumeDownClass, function(e) { // volume down button\u000a                    e.preventDefault();\u000a                    var currentVolume = player.getVolume();\u000a                    if (currentVolume < options.increaseVolumeBy) currentVolume = options.increaseVolumeBy;\u000a                    player.setVolume(currentVolume - options.increaseVolumeBy);\u000a                }).on('click', '.' + options.volumeUpClass, function(e) { // volume up button\u000a                    e.preventDefault();\u000a                    if (player.isMuted()) player.unMute(); // if mute is on, unmute\u000a                    var currentVolume = player.getVolume();\u000a                    if (currentVolume > 100 - options.increaseVolumeBy) currentVolume = 100 - options.increaseVolumeBy;\u000a                    player.setVolume(currentVolume + options.increaseVolumeBy);\u000a                });\u000a \u000a                if (!document.getElementById("ytjs") == false) {\u000a                    window.onYouTubeIframeAPIReady();\u000a                }\u000a            }\u000a \u000a            // load yt iframe js api\u000a            \u000a \u000a            // create plugin\u000a            window._tubular = window._tubular || tubular;\u000a \u000a        })(jQuery, window);\u000a        window._tubular(jQuery("body"), {videoId: params[0], start: params[1], repeat: (params[2] == "loop"), mute: (params[3] !== "sound")});\u000a    }\u000a}\u000a \u000amacros["stopvideo"] = {\u000a    handler: function(place, macroName, params, parser) {\u000a        jQuery("#tubular-container").remove();\u000a        jQuery("#tubular-shield").remove();\u000a    }\u000a}
+p136
+sg20
+(lp137
+Vscript
+p138
+asg22
+g23
+((I2014
+I1
+I25
+I10
+I48
+I9
+I5
+I25
+I0
+tp139
+(dp140
+tp141
+Rp142
+sg28
+g142
+sg29
+VYouTube Background Script
+p143
+sbsa(dp144
+g12
+I00
+sg13
+(lp145
+I1124
+aI275
+asg15
+(itiddlywiki
+Tiddler
+p146
+(dp147
+g18
+Vversion.extensions.timedgotoMacro = \u000a{\u000a	major:1,minor:2,revision:0\u000a};\u000amacros["goto"]=macros.timedgoto = {\u000a	timer:null,handler:function(a,b,c,d) {\u000a		function cssTimeUnit(s) {\u000a			 if(typeof s=="string") {\u000a				if (s.slice(-2).toLowerCase()=="ms") {\u000a					return +(s.slice(0,-2))||0\u000a				}\u000a				else {\u000a					if (s.slice(-1).toLowerCase()=="s") {\u000a						return +(s.slice(0,-1))*1000||0\u000a					}\u000a				}\u000a			} throwError(a,s+" isn't a CSS time unit");\u000a			return 0\u000a		}\u000a\u000a		var t,d,m,s;\u000a		\u000a		t2=c[c.length-1];\u000a		//tn = c[c.length-1].replace("$","");\u000a		//t = state.history[0].variables[tn];\u000a		d=d.fullArgs();\u000a		tn=c[c.length-1];\u000a		tn=tn.replace("$","");\u000a		t=state.history[0].variables[tn];\u000a\u000a		m=0;\u000a		if (b!="goto") {\u000a			d=d.slice(0,d.indexOf("state.history[0].variables."+tn),d.length);\u000a			m = 1000*parseInt(t);\u000a		//throwError(a,m+" is what m is...");\u000a		//throwError(a,d+" is what d is...");\u000a			//var testName = d[1].replace("$", ""); // Need to get rid of the $\u000a			//var testValue = state.history[0].variables[testName];\u000a			//m=cssTimeUnit(t)\u000a			//m = 1000\u000a			//m = testValue\u000a		}\u000a		d=eval(Wikifier.parse(d));\u000a		if (d+""&&state&&state.init) {\u000a			if (macros["goto"].timer) {\u000a				clearTimeout(macros["goto"].timer)\u000a			}\u000a			s=state.history[0].passage.title;\u000a			macros["goto"].timer=setTimeout(function() { \u000a				if(state.history[0].passage.title==s) { \u000a					state.display(d,a)\u000a				}\u000a			},m)\u000a		}\u000a	}\u000a};
+p148
+sg20
+(lp149
+Vscript
+p150
+asg22
+g23
+((I2014
+I1
+I25
+I11
+I2
+I21
+I5
+I25
+I0
+tp151
+(dp152
+tp153
+Rp154
+sg28
+g154
+sg29
+VTimed Goto Script
+p155
+sbsa(dp156
+g12
+I00
+sg13
+(lp157
+I1126
+aI402
+asg15
+(itiddlywiki
+Tiddler
+p158
+(dp159
+g18
+Vwindow.either = function() { return arguments[~~(Math.random()*arguments.length)];}
+p160
+sg20
+(lp161
+Vscript
+p162
+asg22
+g23
+((I2014
+I1
+I25
+I11
+I23
+I26
+I5
+I25
+I0
+tp163
+(dp164
+tp165
+Rp166
+sg28
+g166
+sg29
+VEither Script
+p167
+sbsa(dp168
+g12
+I00
+sg13
+(lp169
+I1127
+aI530
+asg15
+(itiddlywiki
+Tiddler
+p170
+(dp171
+g18
+VString.prototype.unDash = function()\u000a{\u000a	var s = this.split("-");\u000a	if(s.length > 1)\u000a		for(var t=1; t < s.length; t++)\u000a			s[t] = s[t].substr(0,1).toUpperCase() + s[t].substr(1);\u000a	return s.join("");\u000a};
+p172
+sg20
+(lp173
+Vscript
+p174
+asg22
+g23
+((I2014
+I1
+I25
+I12
+I19
+I9
+I5
+I25
+I0
+tp175
+(dp176
+tp177
+Rp178
+sg28
+g178
+sg29
+VInline CSS Script
+p179
+sbsa(dp180
+g12
+I00
+sg13
+(lp181
+I445
+aI773
+asg15
+(itiddlywiki
+Tiddler
+p182
+(dp183
+g18
+V<<if $flyModeCount eq 1>>\u000aAn en.rmous glowing <<print either("led","red")>> panel towers above your desk .nd <<print either("reminds","inf,rms","instruc,s","blares at")>> you that you <<print either("st,ll","")>> have <<if $callsremaining eq 0>>0<<else>><<print $callsremaining>><<endif>> <<if $callsremaining eq 1>>call<<else>>c.lls<<endif>> remaining in today's quota. <<print either("A sm,ll","An emb.rrassing","A vaguely rev.lting","A cringe-,nducing")>> company-provided sticker depicts a teddy be.r, but the words ben,ath it are blurry and illegible. Your one authorized piece of desk dec.r, <<cyclinglink $deskDecor "a Buzz L,ghtyear figurine" "a photo of your f,ancee" "a photo of y.ur fiance" "a photo of your b.yfriend" "a phot. of your girlfriend" "a photo of yo,r husband" "a photo of your w,fe" "a Tot.ro figure" "an autograp,ed baseball" "a Santa h,t from last year's Christmas party" "a Johnny Cash plus,y","a copy of The Fem.le Eunuch">>, is positioned next to your oversized computer monit.r.\u000a\u000a<<print either("The","Your")>> pho,e is <<print either("constantly","eternally","always","")>> ringing, sounding as though it's unde,water. <<print either("They pay you to","It's your job to","Technically you should","You should probably","You should")>> <<replace "answer it">>an,wer it, but you can't seem to lift the receiver no matter how hard you try<<endreplace>>. <<if Math.random() lt 0.5>>You could al,o just <<replace "go to the cafeteria">>go to the cafeteria by [[slipping through the door|FlyCafeteria]] beh,nd a coworker<<endreplace>>.\u000a<<else>>\u000aYo, could al,o just <<replace "go to the cafeteria">>go t. ,he cafeteria, but you ,an't s,em to op,n the large, he.vy d,or<<endreplace>>.\u000a<<endif>>\u000a<<endif>>\u000a<<if $flyModeCount eq 2>>\u000aAn en.rmo,. glowing <<print either("led","red")>> p,nel towe.s above yo,r desk .nd <<print either("r,minds","i.f,rms","in,truc,s","bl,res at")>> yo, t,at you <<print either("st,ll","")>> ha,e <<if $callsremaining eq 0>>0<<else>><<print $callsremaining>><<endif>> <<if $callsremaining eq 1>>ca,l<<else>>c.lls<<endif>> remai,ing in tod.y's q,ota. <<print either("A sm,l,","An emb.rras.,ng","A va,,ely rev.lting","A c.,nge-,nduc,ng")>> co,pan.,provid,d sti,k.r depi,ts . teddy be.r, but t,e words b,n,ath it a.e bl,.ry and i,le.ible. Yo,r one auth,ri,ed pi.ce of d,sk dec.r, <<cyclinglink $deskDecor "a B,zz L,ght.ear f.gu,ine" "a ph,.o of your f,an.ee" "a ph,to of y.ur fia,ce" "a pho.o of y.ur b.yfr,end" "a phot. of yo.r gi,lfri,,d" "a p,.to of yo,r husband" "a p,.to of yo.r w,fe" "a Tot.ro figu,." "an a.,ograp,ed ,.seball" "a Santa h,t from l,.t year's Chris.m.s party" "a Jo,n.y Ca.h plus,y","a co,y ,. The F,m.le Eunuc,.">>, is po,it,on,d next to yo,. oversi,ed com,.ter mo,it.r.\u000a\u000a<<print either("The","Your")>> p.o,e ,s <<print either("con,.antly","ete,.al,y",",.ways","")>> ri,.ing, s.un,.ng as th,ugh it's u,de,water. <<print either("T,ey pa, yo. to","It', you, j.b to","Tec,.ic,lly y.u shoul.","Y,. should prob,.ly","Y.u shou,d")>> <<replace "an,.er it">>an,we. it, b,t you c,.'t s.em to ,.ft the ,..eiver n. mat,.r how ha.d you t,y<<endreplace>>. <<if Math.random() lt 0.5>>Yo, c,.ld al,o just <<replace "go .o the caf,.eria">>go to the c,.,teria .y [[sl.,,ing th,.ugh the do.r|FlyCafeteria]] beh,n, a cowo.,e.<<endreplace>>.\u000a<<else>>\u000aYou ,.uld al,o jus. <<replace "go ,. the ,,.eteria">>go t. ,.e caf,.,ria, b,t y,. can't ,.,m to op.n the lar,., he.vy d..r<<endreplace>>.\u000a<<endif>>\u000a\u000aB.,ng [[und,rneath th, d.sk|FlyDesk]] s,,ms st,.ngely a,,eal.ng ,..ht n.w, t...\u000a<<endif>>\u000a<<if $flyModeCount eq 3>>\u000a., ,..,.,,. ,.,..,, <<print either(",..",".,,")>> ,,.,, .,,,.. .,.., ,.,. ,.., .., <<print either(".,,.,,.",",..,...",",.,.,,,,.",",.,.,, ,.")>> .., .,,. .,, <<print either(",..,,.","")>> ..,, ,. .,,,, ,.,,,.,, ,. .,,.,., ,.,,,. <<print either(". ,...,",",. ,.,.,,...,.,",", ,.,,.,, ,.,.,.,,,",". ,.,,.,.,,.,,,,.")>> .,,,.,.,.,.,,,. ,.,,,.. ,.,,,,.. . ,.,,,,. ...,, ,., ,,. ,..., ,,.,,., .. ,., ..,.,. ,., ,,...,,,.. ,.,. ,.. ,.,,,,.,., ,..., ,. ,,., ,...,, .,,.,. ,.,.,.., ., ,.,,.,.,,. ,.,, ,. .,,. ,..,,.,,., ,.,,..,.,.,,....\u000a\u000a<<print either(",..",",.,,")>> ,..,, ,. <<print either(",.,,.,..,,","..,,.,.,.",",.,.,,","")>> .,,.,.,, ,.,.,.,. ., ,.,,., ,.., .,,.,.,,.. <<print either(",,,,. .,, ., ,.",",.., ,.., ,.. ,.",",..,.,..,,, ,... ,,,,..",",,. ,.,,.. ,.,,,.,,",",.. ,.,,,.")>> <<replace ",.,.., ,.">>.,,.,. ,., ,,. .,, ,,.., .... ,. ,.., ,., ,..,.,,. .. ,.,,., ,.,, ,,.. ,., ,,.<<endreplace>>. <<if Math.random() lt 0.5>>,., ,,.,. .,,. ,.,, <<replace "., .. ,., ..,,.,.,,">>,. .. ,,. ,,.,...., ., [[.,.,,,., ,.,.,.. .,, ,...|FlyCafeteria]] ,..,., , ,.,,.,..<<endreplace>>.\u000a<<else>>\u000a,., ,,.,. .,,. ,.,, <<replace "., .. ,., ..,,.,.,,">>,. .. ,,. ,,.,...., ., [[.,.,,,., ,.,.,.. .,, ,...|FlyCafeteria]] ,..,., , ,.,,.,..<<endreplace>>.\u000a<<endif>>\u000a\u000a,.,,. [[,..,.,,.,, .,, ,.,.|FlyDesk]] .,,,. ,.,..,... ,,,,...., ,..,. ..,, ,...\u000a<<endif>>\u000a\u000a<<silently>>\u000a<<set $lastFlyLocation = "FlyOffice">>\u000a<<set $stepsSincePhoneAnswered = $stepsSincePhoneAnswered + 1>>\u000a\u000a<<stopvideo>>\u000a<<playvideo fOIgNmiGRyA 0 loop>>\u000a\u000a<<fadeoutsound "FlyCafeteria.mp3" >>\u000a<<fadeinsound "FlyOffice.mp3" >>\u000a<<endsilently>>\u000a\u000a
+p184
+sg20
+(lp185
+sg22
+g23
+((I2014
+I1
+I25
+I12
+I56
+I15
+I5
+I25
+I0
+tp186
+(dp187
+tp188
+Rp189
+sg28
+g189
+sg29
+VFlyOffice
+p190
+sbsa(dp191
+g12
+I00
+sg13
+(lp192
+I627
+aI773
+asg15
+(itiddlywiki
+Tiddler
+p193
+(dp194
+g18
+V<<if $flyModeCount eq 1>>\u000aY,u sit alone ,t a free ta.le and <<cyclinglink $flyCafeActivity "ea, some candy" "fea.t on a candied b.nana ch,p" "eat s.me sugar" "e.t some o, a chocolate b,r" "drink s.me sw,et coffee", "wa.t", "wat,. everyone els, eat.ng", "try t. clear y.u, head">>.  Acr,s. the fl,,r are .he full,.eight w,.dows t.at ma,. it t.e <<print either("b,.t sp.ce","one b,.,able plac.","on,. genuinely enjo.able","so,e natu,.lly-lit roo. yo, h.ve access t.")>> in the o,.ice buil.ing. <<print either(",ou oft.. like t,","It's ni,e to",",.u're always dra,n to go ,er to")>> [[look ,.t th.se wind.ws|FlyWindow]] <<print either("a,, just lo.e yoursel,","a,. just s,.ce out","and t.y to relax",",.d think about anyth,.g ot.er th.n w,.k")>>. \u000a\u000a<<print either(".,er pres,.t, of ,..rse, is th. fa,. that","Of cou,.e, you c.n't shake the f,eling","Tec.nically, though,","Yo. sadly real,ze th.t")>> <<if Math.random() lt 0.5>>yo, sho.ld probab,y just <<replace "g. back to ,he .ffice">>g. bac, t. the .ffice [[a,.ngside a cowo,ker|FlyOffice]] hea,ing thr,.gh the do.r now<<endreplace>> a,. <<print either("ge, s.me work d.ne","answ,r some m.re c,lls","k..p chas,ng y,.r quota f,r the ,ay")>>.\u000a<<else>>\u000ay,. should pr,bably j,.t <<replace "g. back .. the of,ice">>go ,.ck to th, offic,, but you ,an't s,em to op,n the large, he.vy d,or<<endreplace>>. \u000a<<endif>>\u000a<<endif>>\u000a<<if $flyModeCount eq 2>>\u000aY,, sit a,.ne ,t a f,,e ta.l, a,d <<cyclinglink $flyCafeActivity ",a, some c,,dy" "f,a.t ,. a candi,. b.na,. c,,p" ",.t s.me sug.r" "e.t s,.e o, a chocolate ,,r" "d,.nk s.me sw,,t coffe,", ",a.t", ",at,. eve,.one els, ,at.ng", ",.y t. cl,.. y.u, h,.d">>.  A,.,s. t.e fl,,r are .he ,.ll,.eight w,.do,s t.at ma,. ,. t.e <<print either(",,.t sp.ce",",.e b,.,.,,e p,ac.","on,. g,.,,nely enjo.ab,e","so,e n,.u,.lly-,.t roo. yo, h.ve ac,.,s t.")>> in t,. o,.ice b,.l.ing. <<print either(",ou ,.t.. lik, t,","I,.s ,i,e to",",.u're a.,,ys dra,n t. ,o ,er ,o")>> [[.,ok ,.t th.se ,.nd.ws|FlyWindow]] <<print either("a,, j,st ,..e you.,el,","a,. ,.st s,.ce o.t",",.d t.y to ,..ax",",.d t,.n. a,.ut an.,h,.g ot.er ,..n w,.k")>>. A p,tpl.nt ,lso c,tch.s y.,. ey,s f,, s,me r,.son ,.d y,. th,nk ab,,t [[t,k.ng a cl,s.r l,,k|FlyPlant]].\u000a\u000a<<print either(".,er .,es,.t, of ,..rs,, is th. fa,. ,.at",",f c.u,.e, y,. c.n't .,,ke t.e f,e,..g","Tec.nic,.ly, t,.ugh,","Yo. sadly re,l,ze th.t")>> <<if Math.random() lt 0.5>>yo, sho.ld pro,..,y ,.st <<replace "g. b,ck to ,he .f,.ce">>g. bac, t. the .f,.ce [[a,.ngside a cowo,ker|FlyOffice]] hea,ing ,.r,.gh .,e do.r n.w<<endreplace>> .,. <<print either("ge, s.,e work d.,.",",.sw,r .,me m.re c,,..","k..p c,..,ng y,.r q,..a f,r t,. ,,y")>>.\u000a<<else>>\u000ay,. s,..ld pr,,..ly j,., <<replace "g. b,.k .. th, .,,ice">>,. ,.ck ,. th, o.,,ic,, but ,ou ,an't s,.m to op,n t,. .,,ge, he.,. d,,r<<endreplace>>.\u000a<<endif>>\u000a<<endif>>\u000a<<if $flyModeCount eq 3>>\u000a.,, ,., ,,... ,, , .,,, ,..., ,,. <<cyclinglink $flyCafeActivity ",., ,.,, .,,,." ",,.., ,. , ,.,,.,. ..,.,. ,,,." ",., ..,. .,..," ",.. ,,., ., , ,..,.,,,. ,,," ",,... ,.,. .,,,. ,.,,.,", ",,..", ",,.,. ,.,,.,., ,.,, ,.,.,.", ",., ,. ,.,.. ..,, ,,..">>.  ,,.,.. ,.. ,.,,. ,., .,. ,.,.,.,..,., ,,.,.,. ,.,. .,,. ,. ,.. <<print either(",,.. ,...,",",.. .,.,.,,. ,,,..",".,,. .,.,,,... ,.,,.,,,.",".,,, .,.,,.,...,,.. ,...,.,, ..,. .,,.,. ,.")>> ,. .,. ,,..,, .,.,.,... <<print either(",,. ,.,.. ,.., ,,",".,., ,.,, ,.",",..,.. ,.,,,. ,..,. ,. ,. ,,. ,.")>> [[.,., ,., ,..., ,.,...,|FlyFreedom]] <<print either(",,, .,,. ,.., .,,.,,.,",".,. ,.,. ,,.,. ..,",",.. ,.. ,. ,..,.",",.. ,,... ,,.,. .,.,,,.. ,..., ,... ,,..")>>. , ,,,...,. ,,.. .,,.... ,.,. ,,,. .,, .,,, .,.,... ,., .,. ,,,.. ,,,,. [[,,..,. , .,,,.. .,,,|FlyPlant]].\u000a\u000a<<print either(".,,. .,.,,.,, ,. ,...,,, ,. ,.. ,.,. ,..,",",, ..,,.,, .,. ,..,. .,,., ,., .,,,...",",...,..,.,., .,.,..,",".,. ,,,., .,,.,,. ,...")>> <<if Math.random() lt 0.5>>,., .,,.,. ,..,..,. ,.,. <<replace ".. ,,., ,. ,., .,,.,.">>,. .,,, .. ,.. .,,.,. [[,,.,,.,., , ,,,.,.,,|FlyOffice]] ,..,.,, ,.,,.., .,, ,,.. ,..<<endreplace>> .,. <<print either(",., ,.,, ,.... ,.,.",",.,.,. .,., ,.,. .,,..","..., .,..,,. ,,.. ,,... ,,. .,. ,,.")>>.\u000a<<else>>\u000a,,. ,,..,, .,,,..., .,., <<replace ",. .,., .. ,., .,,,..">>,. ,.,. ,. .,, ,.,,,.,, ,., ,,. ,,.,, ,,.. .. ,,,. .,. .,,.., ,..,. ,,,,<<endreplace>>.\u000a<<endif>>\u000a<<endif>>\u000a\u000a\u000a<<stopvideo>>\u000a\u000a<<fadeinsound "FlyCafeteria.mp3" >>\u000a<<fadeoutsound "FlyOffice.mp3" >>\u000a\u000a<<set $lastFlyLocation = "FlyCafeteria">>
+p195
+sg20
+(lp196
+sg22
+g23
+((I2014
+I1
+I25
+I12
+I57
+I2
+I5
+I25
+I0
+tp197
+(dp198
+tp199
+Rp200
+sg28
+g200
+sg29
+VFlyCafeteria
+p201
+sbsa(dp202
+g12
+I00
+sg13
+(lp203
+I800
+aI771
+asg15
+(itiddlywiki
+Tiddler
+p204
+(dp205
+g18
+V<<stopvideo>>\u000a<<playvideo XNiANZcR2zc 0 loop>>\u000a\u000a<<timedgoto "FlyCafeteria" 10s>>\u000a\u000a<<set $lastFlyLocation = "FlyCafeteria">>
+p206
+sg20
+(lp207
+sg22
+g23
+((I2014
+I1
+I25
+I12
+I57
+I49
+I5
+I25
+I0
+tp208
+(dp209
+tp210
+Rp211
+sg28
+g211
+sg29
+VFlyWindow
+p212
+sbsa(dp213
+g12
+I00
+sg13
+(lp214
+I522
+aI583
+asg15
+(itiddlywiki
+Tiddler
+p215
+(dp216
+g18
+VMaybe some kind of transition into being a fly, just like a cutscene?\u000a\u000a<<set $flyModeCount = $flyModeCount + 1>>\u000a\u000a<<set $toFlyModeTimerRunning = 0>>\u000a\u000a<<set_timer_mode "display">>\u000a\u000a\u000a<<if $flyModeCount eq 1>>\u000a<<set_timer_param "HumanTransition">>\u000a<<start_timer $FIRST_FLYMODE_DURATION>>\u000a<<else>>\u000a<<if $flyModeCount eq 2>>\u000a<<set_timer_param "HumanTransition">>\u000a<<start_timer $SECOND_FLYMODE_DURATION>>\u000a<<else>>\u000a<<set_timer_param "FlyDying">>\u000a<<start_timer $THIRD_FLYMODE_DURATION>>\u000a<<endif>>\u000a<<endif>>\u000a\u000a<<set $toHumanModeTimerRunning = 1>>\u000a\u000a<<stopvideo>>\u000a\u000a<<stopallsound>>\u000a\u000a<<timedgoto "FlyOffice" 0s>>\u000a\u000a
+p217
+sg20
+(lp218
+sg22
+g23
+((I2014
+I1
+I25
+I12
+I59
+I55
+I5
+I25
+I0
+tp219
+(dp220
+tp221
+Rp222
+sg28
+g222
+sg29
+VFlyTransition
+p223
+sbsa(dp224
+g12
+I00
+sg13
+(lp225
+I264
+aI142
+asg15
+(itiddlywiki
+Tiddler
+p226
+(dp227
+g18
+V<<silently>>\u000a<<set $TimerAddon = \u000afunction()\u000a{\u000a	var div_timer_container = document.createElement('div');\u000a	div_timer_container.setAttribute('id', 'timer');\u000a\u000a	var div_timer_canvas = document.createElement('canvas');\u000a	div_timer_canvas.setAttribute('id', 'timer_canvas');\u000a	div_timer_canvas.setAttribute('width', '150');\u000a	div_timer_canvas.setAttribute('height', '150');\u000a	div_timer_canvas.width = div_timer_canvas.width;\u000a	div_timer_container.appendChild(div_timer_canvas);\u000a	\u000a	var div_timer_text = document.createElement('span');\u000a	div_timer_text.setAttribute('id', 'timer_text');\u000a	div_timer_text.innerHTML = "Hurry Up!";\u000a	div_timer_container.appendChild(div_timer_text);\u000a\u000a	var Timer_Active = false;\u000a  var Timer_Paused = false;\u000a	var Timer_Mode = 'none';\u000a	var Timer_Param = "";\u000a	var Timer_Max = 0;\u000a	var Timer_Now = 0;\u000a  \u000a	var div_jonah_floater = document.getElementById('floater');\u000a	if(div_jonah_floater) 		div_jonah_floater.appendChild(div_timer_container);\u000a\u000a	var div_sugarcane_menu = document.getElementById('sidebar');\u000a	if(div_sugarcane_menu) div_sugarcane_menu.appendChild(div_timer_container);\u000a\u000a	function StartTimer(val)\u000a	{\u000a		Timer_Active = true;\u000a    Timer_Paused = false;\u000a		Timer_Max = val;\u000a		Timer_Now = val;\u000a		div_timer_text.style.display = 'block';\u000a		div_timer_canvas.style.display = 'block';\u000a	}\u000a\u000a	function StopTimer()\u000a	{\u000a		Timer_Active = false;\u000a		div_timer_text.style.display = 'none';\u000a		div_timer_canvas.style.display = 'none';\u000a	}\u000a\u000a	function PauseTimer()\u000a	{\u000a		Timer_Paused = true;\u000a	}\u000a\u000a	function ResumeTimer()\u000a	{\u000a		Timer_Paused = false;\u000a	}\u000a\u000a	function SetTimerText(text)\u000a	{\u000a		div_timer_text.innerHTML = text;\u000a	}\u000a\u000a	function SetTimerMode(mode)\u000a	{\u000a		if(mode == 'display')\u000a		{\u000a			Timer_Mode = 'display';\u000a		}\u000a		else if(mode == 'restart')\u000a		{\u000a			Timer_Mode = 'restart';\u000a		}\u000a		else Timer_Mode = 'none';\u000a	}\u000a\u000a	function SetTimerParam(param)\u000a	{\u000a		Timer_Param = param;\u000a	}\u000a\u000a	function OnTimerEnd()\u000a	{\u000a		StopTimer();\u000a		if(Timer_Mode == 'restart')\u000a		{\u000a			state.restart();\u000a			if(Timer_Param) alert(Timer_Param);\u000a			window.location.reload(true);\u000a			\u000a		} \u000a		else if(Timer_Mode == 'display')\u000a		{\u000a			state.display(Timer_Param[0]);\u000a		}\u000a	}\u000a\u000a	function OnTimerTick()\u000a	{\u000a		if(Timer_Active && !Timer_Paused)\u000a		{\u000a			Timer_Now = Timer_Now - 0.1;\u000a\u000a			if(Timer_Now <= 0) Timer_Now = 0;\u000a			\u000a			var context = div_timer_canvas.getContext("2d");\u000a			div_timer_canvas.width = div_timer_canvas.width;\u000a\u000a			var x = div_timer_canvas.width / 2;\u000a	      var y = div_timer_canvas.height / 2;\u000a	      var radius = 65;\u000a	      var startAngle = 1.5 * Math.PI;\u000a	      \u000a	      var endAngle = (1.5 + (2 / Timer_Max * Timer_Now)) * Math.PI;\u000a	      var counterClockwise = false;\u000a\u000a	      context.beginPath();\u000a	      context.arc(x, y, radius, startAngle, endAngle, counterClockwise);\u000a	      context.lineWidth = 15;\u000a        if(div_jonah_floater) context.strokeStyle = "black";\u000a	      if(div_sugarcane_menu)  context.strokeStyle = "#BBBBBB";\u000a	      context.stroke();\u000a\u000a			context.font = 'bold 30px sans-serif';\u000a			if(div_jonah_floater) context.fillStyle = "black";\u000a			if(div_sugarcane_menu)  context.fillStyle = "#BBBBBB";\u000a			context.fillText(Timer_Now.toFixed(1), 55, 85);\u000a\u000a			if(Timer_Now <= 0) OnTimerEnd();\u000a		}\u000a	}\u000a\u000a	setInterval(function(){ OnTimerTick(); }, 100); \u000a\u000a	macros['start_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			StartTimer(val);\u000a		}\u000a	}\u000a\u000a	macros['stop_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			StopTimer();\u000a		}\u000a	}\u000a\u000a	macros['pause_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			PauseTimer();\u000a		}\u000a	}\u000a\u000a	macros['resume_timer'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			ResumeTimer();\u000a		}\u000a	}\u000a\u000a	macros['set_timer_text'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerText(val);\u000a		}\u000a	}\u000a\u000a	macros['set_timer_mode'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerMode(val);\u000a		}\u000a	}\u000a\u000a	macros['set_timer_param'] =\u000a	{\u000a		handler: function(obj, fnc, val)\u000a		{\u000a			SetTimerParam(val);\u000a		}\u000a	}\u000a\u000a}\u000a>>\u000a<<print $TimerAddon()>>\u000a<<endsilently>>
+p228
+sg20
+(lp229
+sg22
+g23
+((I2014
+I1
+I25
+I13
+I7
+I5
+I5
+I25
+I0
+tp230
+(dp231
+tp232
+Rp233
+sg28
+g233
+sg29
+VTimer Addon
+p234
+sbsa(dp235
+g12
+I00
+sg13
+(lp236
+I992
+aI141
+asg15
+(itiddlywiki
+Tiddler
+p237
+(dp238
+g18
+V#timer_text\u000a{\u000a	display: none;\u000a	color: #000000; /* Jonah */\u000a	color: #BBBBBB; /* Sugarcane */\u000a	font-weight: bold;\u000a	font-size: 28px;\u000a	margin: 10px 0 20px 0;\u000a}\u000a\u000a#timer_canvas\u000a{\u000a	display: none;\u000a	width: 150px;\u000a	height: 150px;\u000a}
+p239
+sg20
+(lp240
+Vstylesheet
+p241
+asg22
+g23
+((I2014
+I1
+I25
+I13
+I7
+I32
+I5
+I25
+I0
+tp242
+(dp243
+tp244
+Rp245
+sg28
+g245
+sg29
+VTimer Stylesheet
+p246
+sbsa(dp247
+g12
+I00
+sg13
+(lp248
+I354
+aI583
+asg15
+(itiddlywiki
+Tiddler
+p249
+(dp250
+g18
+VThis would be the one that just jumps you back to being a human again.\u000a\u000a<<set $workDoneThisTime = 0>>\u000a<<set $toHumanModeTimerRunning = 0>>\u000a<<timedgoto $lastHumanLocation 10s>>\u000a\u000a<<stopvideo>>\u000a\u000a<<stopallsound>>\u000a\u000a<<timedgoto "HumanOffice" 0s>>
+p251
+sg20
+(lp252
+sg22
+g23
+((I2014
+I1
+I25
+I13
+I20
+I54
+I5
+I25
+I0
+tp253
+(dp254
+tp255
+Rp256
+sg28
+g256
+sg29
+VHumanTransition
+p257
+sbsa(dp258
+g12
+I00
+sg13
+(lp259
+F688.0
+aF585.0
+asg15
+(itiddlywiki
+Tiddler
+p260
+(dp261
+g18
+VYou are dead, fly.\u000a\u000a<<stopallsound>>\u000a<<stopvideo>>\u000a\u000a<<playsound "DeathFinal.mp3">>\u000a\u000a<<timedgoto "FlyDead" 20s>>
+p262
+sg20
+(lp263
+sg22
+g23
+((I2014
+I1
+I25
+I15
+I47
+I30
+I5
+I25
+I0
+tp264
+(dp265
+tp266
+Rp267
+sg28
+g267
+sg29
+VFlyDying
+p268
+sbsa(dp269
+g12
+I00
+sg13
+(lp270
+I933
+aI1060
+asg15
+(itiddlywiki
+Tiddler
+p271
+(dp272
+g18
+VYou are free, fly!\u000a\u000a<<stopvideo>>\u000a<<playvideo XNiANZcR2zc 0 loop>>\u000a\u000a<<stopallsound>>\u000a<<playsound "WindowEnd.mp3">>
+p273
+sg20
+(lp274
+sg22
+g23
+((I2014
+I1
+I25
+I15
+I47
+I50
+I5
+I25
+I0
+tp275
+(dp276
+tp277
+Rp278
+sg28
+g278
+sg29
+VFlyFreedom
+p279
+sbsa(dp280
+g12
+I00
+sg13
+(lp281
+I993
+aI275
+asg15
+(itiddlywiki
+Tiddler
+p282
+(dp283
+g18
+V.revision-span-in {\u000a	opacity: 0;\u000a}\u000a.revision-span:not(.revision-span-out) {\u000a	transition: 1s; -webkit-transition: 1s;\u000a}\u000a.revision-span-out {\u000a	position:absolute;\u000a	opacity: 0;\u000a}
+p284
+sg20
+(lp285
+Vstylesheet
+p286
+asg22
+g23
+((I2014
+I1
+I25
+I17
+I5
+I58
+I5
+I25
+I0
+tp287
+(dp288
+tp289
+Rp290
+sg28
+g290
+sg29
+VReplace Macros CSS
+p291
+sbsa(dp292
+g12
+I00
+sg13
+(lp293
+I1128
+aI657
+asg15
+(itiddlywiki
+Tiddler
+p294
+(dp295
+g18
+V(function(){version.extensions.replaceMacrosCombined={major:1,minor:1,revision:2};var nullobj={handler:function(){}};function showVer(n,notrans){if(!n){return\u000a}n.innerHTML="";new Wikifier(n,n.tweecode);n.setAttribute("data-enabled","true");n.style.display="inline";n.classList.remove("revision-span-out");\u000aif(!notrans){n.classList.add("revision-span-in");if(n.timeout){clearTimeout(n.timeout)}n.timeout=setTimeout(function(){n.classList.remove("revision-span-in");\u000an=null},1)}}function hideVer(n,notrans){if(!n){return}n.setAttribute("data-enabled","false");n.classList.remove("revision-span-in");\u000aif(n.timeout){clearTimeout(n.timeout)}if(!notrans){n.classList.add("revision-span-out");n.timeout=setTimeout(function(){if(n.getAttribute("data-enabled")=="false"){n.classList.remove("revision-span-out");\u000an.style.display="none";n.innerHTML=""}n=null},1000)}else{n.style.display="none";n.innerHTML="";n=null}}function tagcontents(b,starttags,desttags,endtags,k){var l=0,c="",tg,a,i;\u000afunction tagfound(i,e){for(var j=0;j<e.length;j++){if(a.indexOf("<<"+e[j],i)==i){return e[j]}}}a=b.source.slice(k);for(i=0;\u000ai<a.length;i++){if(tg=tagfound(i,starttags)){l++}else{if((tg=tagfound(i,desttags))&&l==0){b.nextMatch=k+i+tg.length+4;return[c,tg]\u000a}else{if(tg=tagfound(i,endtags)){l--;if(l<0){return null}}}}c+=a.charAt(i)}return null}var begintags=[];var endtags=[];function revisionSpanHandler(g,e,f,b){var k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length,becomes,c,cn,m,h,vsn;\u000afunction mkspan(vtype){h=insertElement(m,"span",null,"revision-span "+vtype);h.setAttribute("data-enabled",false);h.style.display="none";\u000ah.tweecode="";return h}if(this.shorthand&&flen){while(f.length>0){vsns.push([f.shift(),(this.flavour=="insert"?"gains":"becomes")])\u000a}}else{if(this.flavour=="insert"||(this.flavour=="continue"&&this.trigger=="time")){vsns.push(["","becomes"])}}if(this.flavour=="continue"&&flen){b.nextMatch=k+b.source.slice(k).length;\u000avsns.push([b.source.slice(k),vtype])}else{becomes=["becomes","gains"];c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k);\u000aif(c&&endtags.indexOf(c[1])==-1){while(c){vsns.push(c);c=tagcontents(b,begintags,becomes,endtags,b.nextMatch)}c=tagcontents(b,begintags,["end"+e],endtags,b.nextMatch)\u000a}if(!c){throwError(g,"can't find matching end"+e);return}vsns.push(c);if(this.flavour=="continue"){k=b.nextMatch;b.nextMatch=k+b.source.slice(k).length;\u000avsns.push([b.source.slice(k),""])}}if(this.flavour=="remove"){vsns.push(["","becomes"])}cn=0;m=insertElement(g,"span",null,e);\u000am.setAttribute("data-flavour",this.flavour);h=mkspan("initial");vsn=vsns.shift();h.tweecode=vsn[0];showVer(h,true);while(vsns.length>0){if(vsn){vtype=vsn[1]\u000a}vsn=vsns.shift();h=mkspan(vtype);h.tweecode=vsn[0]}if(typeof this.setup=="function"){this.setup(m,g,f)}}function quantity(m){return(m.children.length-1)+(m.getAttribute("data-flavour")=="remove")\u000a}function revisionSetup(m,g,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,f){var fl=this.flavour,key=f[0];\u000am.setEventListener("keydown",function l(e){var done=!revise("revise",m);if(done){m.removeEventListener("keydown",l)}})}function timeSetup(m,g,f){function cssTimeUnit(s){if(typeof s=="string"){if(s.slice(-2).toLowerCase()=="ms"){return Number(s.slice(0,-2))||0\u000a}else{if(s.slice(-1).toLowerCase()=="s"){return Number(s.slice(0,-1))*1000||0}}}throwError(g,s+" isn't a CSS time unit");\u000areturn 0}var fl=this.flavour;var tm=cssTimeUnit(f[0]);setTimeout(function timefn(){var done=!revise("revise",m);if(!done){setTimeout(timefn,tm)\u000a}},tm)}function hoverSetup(m){var fn,noMouseEnter=(document.head.onmouseenter!==null);m.onmouseenter=function(){revise("revise",this)\u000a};m.onmouseleave=function(){revise("revert",this)};if(noMouseEnter){fn=function(n){return function(e){if(!event.relatedTarget||(event.relatedTarget!=this&&!(this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY))){this[n]()\u000a}}};m.onmouseover=fn("onmouseenter");m.onmouseout=fn("onmouseleave")}m=null}function mouseSetup(m){var fl=this.flavour,evt=(document.head.onmouseenter===null?"onmouseenter":"onmouseover");\u000am[evt]=function(){var done=!revise("revise",this);if(done){this[evt]=null}};m=null}function linkSetup(m,g,f){var fl=this.flavour,l=Wikifier.createInternalLink(),p=m.parentNode;\u000al.className="internalLink replaceLink";p.insertBefore(l,m);l.insertBefore(m,null);l.onclick=function(){var p,done=false;if(m&&m.parentNode==this){done=!revise("revise",m);\u000ascrollWindowTo(m)}if(done){this.parentNode.insertBefore(m,this);this.parentNode.removeChild(this)}};l=null}function visitedSetup(m,g,f){var i,done,shv=state.history[0].variables,os="once seen",d=(m.firstChild&&(this.flavour=="insert"?m.firstChild.nextSibling:m.firstChild).tweecode);\u000ashv[os]=shv[os]||{};if(d&&!shv[os].hasOwnProperty(d)){shv[os][d]=1}else{for(i=shv[os][d];i>0&&!done;i--){done=!revise("revise",m,true)\u000a}if(shv[os].hasOwnProperty(d)){shv[os][d]+=1}}}[{name:"insert",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replace",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continue",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler;\u000ae.shorthand=(["link","mouse","hover"].indexOf(e.trigger)>-1);macros[e.name]=e;macros["end"+e.name]=nullobj;begintags.push(e.name);\u000aendtags.push("end"+e.name)});function insideDepartingSpan(elem){var r=elem.parentNode;while(!r.classList.contains("passage")){if(r.classList.contains("revision-span-out")){return true\u000a}r=r.parentNode}}function reviseAll(rt,rname){var rall=document.querySelectorAll(".passage ."+rname),ret=false;for(var i=0;\u000ai<rall.length;i++){if(!insideDepartingSpan(rall[i])){ret=revise(rt,rall[i])||ret}}return ret}function revise(rt,r,notrans){var ind2,curr,next,ind=-1,rev=(rt=="revert"),rnd=(rt.indexOf("random")>-1),fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc=(fl=="cycle"),rcl=rc.length-1;\u000afunction doToGainerSpans(n,fn){for(var k=n-1;k>=0;k--){if(rc[k+1].classList.contains("gains")){fn(rc[k],notrans)}else{break\u000a}}}for(var k=0;k<=rcl;k++){if(rc[k].getAttribute("data-enabled")=="true"){ind=k}}if(rev){ind-=1}curr=(ind>=0?rc[ind]:(cyc?rc[rcl]:null));\u000aind2=ind;if(rnd){ind2=(ind+(Math.floor(Math.random()*rcl)))%rcl}next=((ind2<rcl)?rc[ind2+1]:(cyc?rc[0]:null));var docurr=(rev?showVer:hideVer);\u000avar donext=(rev?hideVer:showVer);var currfn=function(){if(!(next&&next.classList.contains("gains"))||rnd){docurr(curr,notrans);\u000adoToGainerSpans(ind,docurr,notrans)}};var nextfn=function(){donext(next,notrans);if(rnd){doToGainerSpans(ind2+1,donext,notrans)\u000a}};if(!rev){currfn();nextfn()}else{nextfn();currfn()}return(cyc?true:(rev?(ind>0):(ind2<rcl-1)))}macros.revert=macros.revise=macros.randomise=macros.randomize={handler:function(a,b,c){var l,rev,rname;\u000afunction disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1){enableLink(l);\u000areturn}var rall=document.querySelectorAll(".passage ."+rname),cannext,canprev,i,ind,r,fl;for(i=0;i<rall.length;i++){r=rall[i],fl=r.getAttribute("data-flavour");\u000aif(insideDepartingSpan(r)){continue}if(fl=="cycle"){cannext=canprev=true}else{if(r.firstChild.getAttribute("data-enabled")==!1+""){canprev=true\u000a}if(r.lastChild.getAttribute("data-enabled")==!1+""){cannext=true}}}var can=(l.classList.contains("revert")?canprev:cannext);\u000a(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled");w.classList.toggle(rl+"Disabled");\u000aw.style.display=((w.style.display=="none")?"inline":"none")}var rl="reviseLink";if(c.length<2){throwError(a,b+" macro needs 2 parameters");\u000areturn}rname=c.shift().replace(" ","_");l=Wikifier.createInternalLink(a,null);l.className="internalLink "+rl+" "+rl+"_"+rname+" "+b;\u000avar v="";var end=false;var out=false;if(c.length>1&&c[0][0]=="$"){v=c[0].slice(1);c.shift()}switch(c[c.length-1]){case"end":end=true;\u000ac.pop();break;case"out":out=true;c.pop();break}var h=state.history[0].variables;for(var i=0;i<c.length;i++){var on=(i==Math.max(c.indexOf(h[v]),0));\u000avar d=insertElement(null,"span",null,rl+((on)?"En":"Dis")+"abled");if(on){h[v]=c[i];l.setAttribute("data-cycle",i)}else{d.style.display="none"\u000a}insertText(d,c[i]);l.appendChild(d)}l.onclick=function(){reviseAll(b,rname);var t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length,n,lall,i;\u000aif((end||out)&&u==m-(end?2:1)){if(end){n=this.removeChild(t[u+1]);n.className=rl+"End";n.style.display="inline";this.parentNode.replaceChild(n,this)\u000a}else{this.parentNode.removeChild(this);return}}else{toggleText(t[u]);u=(u+1)%m;if(v){h[v]=c[u]}toggleText(t[u]);this.setAttribute("data-cycle",u)\u000a}lall=document.getElementsByClassName(rl+"_"+rname);for(i=0;i<lall.length;i++){updateLink(lall[i])}};l=null}};macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["end"+b],evt=(window.onmouseenter===null?"onmouseenter":"onmouseover"),t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);\u000aif(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);\u000aif(b!="hoverrevise"&&done){this[evt]=null}};new Wikifier(h,t[0]);if(b=="hoverrevise"){h.onmouseover=f;h.onmouseout=function(){reviseAll("revert",rname)\u000a}}else{h[evt]=f}h=null}}};macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}};macros.endmouserevise=nullobj;\u000amacros.endhoverrevise=nullobj}());
+p296
+sg20
+(lp297
+Vscript
+p298
+asg22
+g23
+((I2014
+I1
+I25
+I17
+I6
+I14
+I5
+I25
+I0
+tp299
+(dp300
+tp301
+Rp302
+sg28
+g302
+sg29
+VReplace Macros Script
+p303
+sbsa(dp304
+g12
+I00
+sg13
+(lp305
+I714
+aI147
+asg15
+(itiddlywiki
+Tiddler
+p306
+(dp307
+g18
+V<<silently>>\u000a\u000a<<set $lastHumanLocation = "HumanCafeteria">>\u000a<<set $emailsRemaining = $emailsRemaining - 1>>\u000a<<set $workDoneThisTime = $workDoneThisTime + 1>>\u000a\u000a<<stopvideo>>\u000a<<playvideo uXxQcQ_-xT4 0 loop>>\u000a\u000a<<if $toFlyModeTimerRunning eq 0>>\u000a	<<if $flyModeCount eq 0>>\u000a		<<if $workDoneThisTime gte $FIRST_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a	<<if $flyModeCount eq 1>>\u000a		<<if $workDoneThisTime gte $SECOND_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a	<<if $flyModeCount gte 2>>\u000a		<<if $workDoneThisTime gte $THIRD_WORK_REQUIREMENT>>\u000a			<<display "Timer Addon">>\u000a			<<set_timer_mode "display">>\u000a			<<set_timer_param "FlyTransition">>\u000a			<<set $toFlyModeTimerRunning = 1>>\u000a			<<start_timer 1>>\u000a		<<endif>>\u000a	<<endif>>\u000a<<endif>>\u000a<<endsilently>>\u000a<<if Math.random() < 0.5>>\u000a<<set $question =  \u000aeither(\u000a"asks you to list all the salient differences between product A and product B",\u000a"makes a formal request to see the records your company holds on them",\u000a"asks whether you know anything about how to connect two routers together to extend their wifi coverage, something which has nothing to do with your office",\u000a"talks about a product that your company does make, but which you have no connection with",\u000a"tells you about a theory they have concerning microwave radiation",\u000a"asks you to send them an information sheet about a product you have never heard of",\u000a"asks whether there are any jobs going in your office",\u000a"asks you out on a date",\u000a"attempts to start a conversation with you about immigration reform",\u000a"gives you their sales pitch for a product made by a competing company"\u000a) >>\u000aYou open the first email and <<print either("brace yourself","take a deep breathe","pray for inner strength","grind your teeth")>>. In it, <<print either("a customer","a client","someone","some customer")>> <<print $question>>.\u000a\u000aYou type in, "<<cyclinglink $pointlessCallAnswer "I don't know" "that's not my area" "I'll get back to you" "I'm forwarding your mail to a colleague" "why are you emailing me?" "what do you want from me?" "don't you have anything better to do?" "I think you've got the wrong address" "please don't email this address again">>", and [[send it|HumanCafeteria]].\u000a<<else>>\u000a<<set $question =  \u000aeither(\u000a"asks for help with the computer system your office deals with",\u000a"requests information on your latest products",\u000a"talks about how their computer isn't working anymore",\u000a"asks you some very specific questions about the system your office supports",\u000a"asks for a replacement manual to be sent to them",\u000a"gives you a remarkably detailed account of their daily use of the system your office supports, then asks a complicated question you don't know the answer to",\u000a"inquires about your office's policy on returning software after the warantee has expired",\u000a"tells you an involved story about a problem they're having with your company's software",\u000a"asks you why they shouldn't move their business to a competitor's system",\u000a"asks about upgrade options for an antiquated version of your company's software"\u000a) >>\u000aYou open the first email and <<print either("brace yourself","take a deep breathe","pray for inner strength","grind your teeth")>>. In it, <<print either("a customer","a client","someone","some customer")>> <<print $question>>.\u000a\u000aYou type in a message to <<cyclinglink $normalCallAnswer "tell them you'll get back to them" "say you'll have an appropriate colleague get in touch" "ask whether they've tried the general purpose support email address" "get them out of the way" "give them the standard response" "do your best to assist them">> and then [[send it|HumanCafeteria]].\u000a<<endif>>
+p308
+sg20
+(lp309
+sg22
+g23
+((I2014
+I1
+I25
+I17
+I55
+I16
+I5
+I25
+I0
+tp310
+(dp311
+tp312
+Rp313
+sg28
+g313
+sg29
+VHumanEmail
+p314
+sbsa(dp315
+g12
+I00
+sg13
+(lp316
+I435
+aI445
+asg15
+(itiddlywiki
+Tiddler
+p317
+(dp318
+g18
+V<<if Math.random() < 0.33>><html><br /></html><<print either(\u000a"Ida is having an urgently whispered conversation with Sidsel across their desks.",\u000a"Someone's abandoned cellphone cries on and on like a lost child.",\u000a"Your desk is so tidy it's depressing.",\u000a"You think you can hear Lorde's Royals piping tinnily from someone's cheap earphones.",\u000a"The red glare of everyone's quota displays are contributing to a general sweatshop aesthetic.",\u000a"Sometimes you wish you could just demand silence.",\u000a"You don't even have a dirty coffee cup to defuse the asceticism of your desk area.",\u000a"You don't even really know what time it is. You never do in this room.",\u000a"You pause to marvel at the concept of the telephone, people insistently ringing bells in other people's houses and places of work.",\u000a"Who are all these people, anyway?"\u000a)>><html><br /></html><<endif>>
+p319
+sg20
+(lp320
+sg22
+g23
+((I2014
+I1
+I25
+I19
+I59
+I22
+I5
+I25
+I0
+tp321
+(dp322
+tp323
+Rp324
+sg28
+g324
+sg29
+VOfficeFlavour
+p325
+sbsa(dp326
+g12
+I00
+sg13
+(lp327
+I714
+aI446
+asg15
+(itiddlywiki
+Tiddler
+p328
+(dp329
+g18
+V<<if Math.random() < 0.33>><html><br /></html><<print either(\u000a"Two of your female co-workers are discussing the Bechdel test, gesticulating wildly and laughing about some new Hollywood blockbuster.",\u000a"The hum of the cafeteria is both comforting and soul-destroying.",\u000a"All around you, people are happy not to be working for a few minutes.",\u000a"The clink of cups and cutlery is almost pleasant if you just try to fight through the soul crushing specter of work.",\u000a"A fly zips past your ear with a busy buzz.",\u000a"Some guy from accounts is sitting on his own in a corner, muttering.",\u000a"It always amazes you how many people in the company you have absolutely no familiarity with, but here they all are, again.",\u000a"You try not to fixate on people chewing.",\u000a"The selection of food today is the same as it always is: mediocre, but really not too bad, all things considered.",\u000a"Nearby, someone breaks into malicious-sounding laughter"\u000a)>><html><br /></html><<endif>>
+p330
+sg20
+(lp331
+sg22
+g23
+((I2014
+I1
+I25
+I20
+I2
+I55
+I5
+I25
+I0
+tp332
+(dp333
+tp334
+Rp335
+sg28
+g335
+sg29
+VCafeteriaFlavour
+p336
+sbsa(dp337
+g12
+I00
+sg13
+(lp338
+I1129
+aI787
+asg15
+(itiddlywiki
+Tiddler
+p339
+(dp340
+g18
+V(function(){\u000avar bs = String.fromCharCode(92);\u000aif ("\u005c\u005c".length>1) {\u000a  eval(scripts[i].text.replace(new RegExp(bs+"/"+bs+"/","g"),"").replace(new RegExp(bs+bs+"s","g"),bs));\u000a}\u000aelse {\u000aWikifier.parse = function (b) {\u000a    function alter(from,to) {\u000a        //var g = "(?=(?:[^\u005c"'\u005c\u005c\u005c\u005c]*(?:\u005c\u005c\u005c\u005c.|'(?:[^'\u005c\u005c\u005c\u005c]*\u005c\u005c\u005c\u005c.)*[^'\u005c\u005c\u005c\u005c]*'|\u005c"(?:[^\u005c"\u005c\u005c\u005c\u005c]*\u005c\u005c\u005c\u005c.)*[^\u005c"\u005c\u005c\u005c\u005c]*\u005c"))*[^'\u005c"]*$)";\u000a        //return b.replace(new RegExp(from+g,"gi"),to);\u000a    }\u000a    b = alter("\u005c\u005c$","state.history[0].variables.");\u000a    b = alter("\u005c\u005cbeq\u005c\u005cb", " == ");\u000a    b = alter("\u005c\u005cbneq\u005c\u005cb", " != ");\u000a    b = alter("\u005c\u005cbgt\u005c\u005cb", " > ");\u000a    b = alter("\u005c\u005cbeq\u005c\u005cb", " == ");\u000a    b = alter("\u005c\u005cbneq\u005c\u005cb", " != ");\u000a    b = alter("\u005c\u005cbgt\u005c\u005cb", " > ");\u000a    b = alter("\u005c\u005cbgte\u005c\u005cb", " >= ");\u000a    b = alter("\u005c\u005cblt\u005c\u005cb", " < ");\u000a    b = alter("\u005c\u005cblte\u005c\u005cb", " <= ");\u000a    b = alter("\u005c\u005cband\u005c\u005cb", " && ");\u000a    b = alter("\u005c\u005cbor\u005c\u005cb", " || ");\u000a    b = alter("\u005c\u005cbnot\u005c\u005cb", " ! ");\u000a    return b\u000a};\u000a}\u000a}());
+p341
+sg20
+(lp342
+Vscript
+p343
+asg22
+g23
+((I2014
+I1
+I25
+I20
+I26
+I36
+I5
+I25
+I0
+tp344
+(dp345
+tp346
+Rp347
+sg28
+g347
+sg29
+VOperator Printing Fix Script
+p348
+sbsa(dp349
+g12
+I00
+sg13
+(lp350
+I275
+aI772
+asg15
+(itiddlywiki
+Tiddler
+p351
+(dp352
+g18
+V<<if $flyModeCount eq 2>>\u000aIt's pe,cef,l ,nd,r th, d.sk, . w,rld ,f s.mpl, sh.p,s. Y,. w.nd,r why y,. h,v.n,t sp.nt m.r, t,me d.wn h,r. in th, p.st ,nd th,n f.g,r. ,t's pr,b,bl. j,st , l,ttl. t,, .nc,nv.nt,.n.l f,r .n ,ff,c. .nv,ronm,nt. F.r n,w, th,.gh, .t,s pl,,s.nt j,st t, s,t h.r..\u000a\u000a,t s.me p,,nt y,..ll h,ve t, g. [[b.,k t. w,rk|FlyOffice]], b,t m.yb, n.t j,st y.t...\u000a<<endif>>\u000a<<if $flyModeCount eq 3>>\u000a,... ,,,,..,, ,,.,, .,, ..,., . .,,., ,, ...,,, ,,.,,.. ,,. ..,,,. ,,, ,,. .,,..,, ,,.,,, .., ,,.. ,.,, ,,.. ,. .., .... ,,, .,,, ,..,,. ,.., ,,,.,,,. ,,.. , ,,,,. .,, .,,,,,...,.,.. ,,. ., ,..,,. .,,,,...,,,. .., .,,, ,,,..., .,,. ,,,,..,, ,,,, ., ,,. ..,..\u000a\u000a,. ,... ,,,.. .,.... ,,.. ,, .. [[,.,. ,. .,,,|FlyOffice]], .,. ,.,,, ... ,,,. ,.,...\u000a<<endif>>
+p353
+sg20
+(lp354
+sg22
+g23
+((I2014
+I1
+I26
+I2
+I20
+I33
+I6
+I26
+I0
+tp355
+(dp356
+tp357
+Rp358
+sg28
+g358
+sg29
+VFlyDesk
+p359
+sbsa(dp360
+g12
+I00
+sg13
+(lp361
+F627.0
+aF962.0
+asg15
+(itiddlywiki
+Tiddler
+p362
+(dp363
+g18
+V<<if $flyModeCount eq 2>>\u000aTh, p.tpl,nt l,,k. l,k. . tre, f,.m th.s ,.gle, t,wer.ng ,ver y,. som,h.w. Yo, fe.l ,. th,.gh y,u c,n t.ke sh,.ter b,ne,th ,ts br,ad l,.ves a,d .vo,d th, str,.ses .f th. w,.kpl,c. f,r j,.t , w,.le. M.,nw,.le, th, r,st .f th, [[c,fet,r,.|FlyCafeteria]] c.n,.nues t, h,m ,.th l.f,.\u000a<<endif>>\u000a<<if $flyModeCount eq 3>>\u000a,.. ,..,,,. .,,,. ,.,, , ,... ,,,. .,.. ,,.,,, ,..,..,. ,,.. ,.. ,...,,,. ,,. ,.., ,. ,.,,.. ,.. ,.. ,,.. ,..,.,. ,.,..., ,.,. ,..,, ,,.,, ,.., ,..,. ,.., ,,.,.. ,. .,. ,..,,.,.,, ,.. ,,.. . ,..,,. ,...,.,.,, ,,. .,,, ,, ,.. [[,..,...,,|FlyCafeteria]] .,..,,,., ,. ,.. ,,.. ..,,.\u000a<<endif>>
+p364
+sg20
+(lp365
+sg22
+g23
+((I2014
+I1
+I26
+I2
+I22
+I26
+I6
+I26
+I0
+tp366
+(dp367
+tp368
+Rp369
+sg28
+g369
+sg29
+VFlyPlant
+p370
+sbsa(dp371
+g12
+I00
+sg13
+(lp372
+F1131.0
+aF916.0
+asg15
+(itiddlywiki
+Tiddler
+p373
+(dp374
+g18
+V(function () {\u000a  "use strict";\u000a  version.extensions['soundMacros'] = {\u000a    major: 1,\u000a    minor: 1,\u000a    revision: 2\u000a  };\u000a  var p = macros['playsound'] = {\u000a    soundtracks: {},\u000a    handler: function (a, b, c, d) {\u000a      var loop = function (m) {\u000a          if (m.loop == undefined) {\u000a            m.loopfn = function () {\u000a              this.play();\u000a            };\u000a            m.addEventListener('ended', m.loopfn, 0);\u000a          } else m.loop = true;\u000a          m.play();\u000a          };\u000a      var s = eval(d.fullArgs());\u000a      if (s) {\u000a        s = s.toString();\u000a        var m = this.soundtracks[s.slice(0, s.lastIndexOf("."))];\u000a        if (m) {\u000a          if (b == "playsound") {\u000a            m.play();\u000a          } else if (b == "loopsound") {\u000a            loop(m);\u000a          } else if (b == "pausesound") {\u000a            m.pause();\u000a          } else if (b == "unloopsound") {\u000a            if (m.loop != undefined) {\u000a              m.loop = false;\u000a            } else if (m.loopfn) {\u000a              m.removeEventListener('ended', m.loopfn);\u000a              delete m.loopfn;\u000a            }\u000a          } else if (b == "stopsound") {\u000a            m.pause();\u000a            m.currentTime = 0;\u000a          } else if (b == "fadeoutsound" || b == "fadeinsound") {\u000a            if (m.interval) clearInterval(m.interval);\u000a            if (b == "fadeinsound") {\u000a              if (m.currentTime>0) return;\u000a              m.volume = 0;\u000a              loop(m);\u000a            } else {\u000a              if (!m.currentTime) return;\u000a              m.play();\u000a            }\u000a            var v = m.volume;\u000a            m.interval = setInterval(function () {\u000a              v = Math.min(1, Math.max(0, v + 0.005 * (b == "fadeinsound" ? 1 : -1)));\u000a              m.volume = Math.easeInOut(v);\u000a              if (v == 0 || v == 1) clearInterval(m.interval);\u000a              if (v == 0) {\u000a                m.pause();\u000a                m.currentTime = 0;\u000a                m.volume = 1;\u000a              }\u000a            }, 10);\u000a          }\u000a        }\u000a      }\u000a    }\u000a  }\u000a  macros['fadeinsound'] = p;\u000a  macros['fadeoutsound'] = p;\u000a  macros['unloopsound'] = p;\u000a  macros['loopsound'] = p;\u000a  macros['pausesound'] = p;\u000a  macros['stopsound'] = p;\u000a  macros['stopallsound'] = {\u000a    handler: function () {\u000a      var s = macros.playsound.soundtracks;\u000a      for (var j in s) {\u000a		if (s.hasOwnProperty(j)) {\u000a          s[j].pause();\u000a          if (s[j].currentTime) {\u000a		    s[j].currentTime = 0;\u000a		  }\u000a		}\u000a      }\u000a    }\u000a  }\u000a  var div = document.getElementById("storeArea").firstChild;\u000a  var fe = ["ogg", "mp3", "wav", "webm"];\u000a  while (div) {\u000a    var b = String.fromCharCode(92);\u000a    var q = '"';\u000a    var re = "['" + q + "]([^" + q + "']*?)" + b + ".(ogg|mp3|wav|webm)['" + q + "]";\u000a    k(new RegExp(re, "gi"));\u000a    div = div.nextSibling;\u000a  }\u000a\u000a  function k(c, e) {\u000a    do {\u000a      var d = c.exec(div.innerHTML);\u000a      if (d) {\u000a        var a = new Audio();\u000a        if (a.canPlayType) {\u000a          for (var i = -1; i < fe.length; i += 1) {\u000a            if (i >= 0) d[2] = fe[i];\u000a            if (a.canPlayType("audio/" + d[2])) break;\u000a          }\u000a          if (i < fe.length) {\u000a            a.setAttribute("src", d[1] + "." + d[2]);\u000a            a.interval = null;\u000a            macros.playsound.soundtracks[d[1]] = a;\u000a          } else console.log("Browser can't play '" + d[1] + "'");\u000a        }\u000a      }\u000a    } while (d);\u000a  }\u000a}());
+p375
+sg20
+(lp376
+Vscript
+p377
+asg22
+g23
+((I2014
+I1
+I26
+I3
+I22
+I55
+I6
+I26
+I0
+tp378
+(dp379
+tp380
+Rp381
+sg28
+g381
+sg29
+VHTML5 Sound Script
+p382
+sbsa(dp383
+g12
+I00
+sg13
+(lp384
+F1130.0
+aF1043.0
+asg15
+(itiddlywiki
+Tiddler
+p385
+(dp386
+g18
+VHistory.prototype.display=function(d,b,a){var c=tale.get(d);this.history.unshift({passage:c,variables:clone(this.history[0].variables)});\u000athis.history[0].hash=this.save();var e=c.render();if(a!="offscreen"){removeChildren(document.getElementById("passages"));\u000adocument.getElementById("passages").appendChild(e);if(a!="quietly"){fade(e,{fade:"in"});}}if((a=="quietly")||(a=="offscreen")){e.style.visibility="visible";\u000a}if(a!="offscreen"){document.title=tale.title;document.title+=": "+c.title;window.scroll(0,0);\u000a}return e;};
+p387
+sg20
+(lp388
+Vscript
+p389
+asg22
+g23
+((I2014
+I1
+I26
+I4
+I21
+I42
+I6
+I26
+I0
+tp390
+(dp391
+tp392
+Rp393
+sg28
+g393
+sg29
+VNo Back Button Script
+p394
+sbsa(dp395
+g12
+I00
+sg13
+(lp396
+F844.0
+aF585.0
+asg15
+(itiddlywiki
+Tiddler
+p397
+(dp398
+g18
+V
+p399
+sg20
+(lp400
+sg22
+g23
+((I2014
+I1
+I26
+I10
+I52
+I45
+I6
+I26
+I0
+tp401
+(dp402
+tp403
+Rp404
+sg28
+g404
+sg29
+VFlyDead
+p405
+sbsasS'scale'
+p406
+F1.0
+ss.
